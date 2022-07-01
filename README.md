@@ -15,7 +15,7 @@
 子育てについて検索したり、自身の子育てについて投稿する
 
 ## 設計書
-<...>
+画面設計書：https://drive.google.com/file/d/15XHHGi-YhMx9tizmUrb51K93x6isygGQ/view?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
