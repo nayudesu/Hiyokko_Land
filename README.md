@@ -16,7 +16,8 @@
 
 ## 設計書
 画面設計書：https://drive.google.com/file/d/15XHHGi-YhMx9tizmUrb51K93x6isygGQ/view?usp=sharing
-  ワイヤーフレーム：（ユーザー側）https://docs.google.com/presentation/d/1fqzz32T12Vo0xJKbSAtLqRc7t2BnE61QsL5vJ6yrdds/edit?usp=sharing
+
+ワイヤーフレーム：（ユーザー側）https://docs.google.com/presentation/d/1fqzz32T12Vo0xJKbSAtLqRc7t2BnE61QsL5vJ6yrdds/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
