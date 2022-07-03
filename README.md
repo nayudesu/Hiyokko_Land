@@ -19,6 +19,8 @@
 
 ワイヤーフレーム：（ユーザー側）https://docs.google.com/presentation/d/1fqzz32T12Vo0xJKbSAtLqRc7t2BnE61QsL5vJ6yrdds/edit?usp=sharing
 
+ワイヤーフレーム：（管理者側）https://docs.google.com/presentation/d/1h6Bq07G2XlEdKhpwmwkcN-mjxSO-8bsEPGF_lhvQ1gc/edit?usp=sharing
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
