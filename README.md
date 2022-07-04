@@ -24,6 +24,8 @@
 ER図：https://drive.google.com/file/d/1qtAcW-3tgkKA8RKfKUT3feEic8n_IPAE/view?usp=sharing
 
 テーブル定義書：https://docs.google.com/spreadsheets/d/13fl1On8l6rfng4OqZgcq7r_Z-r4kNdQ_/edit?usp=sharing&ouid=117424918320852955496&rtpof=true&sd=true
+
+詳細設計図：https://docs.google.com/spreadsheets/d/1oyc_0J-EuH3G1sk34XRLxu10vXupoad2qtk1xq4ToZs/edit?usp=sharing
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
