@@ -1,2 +1,16 @@
-<h1>Public::Posts#show</h1>
-<p>Find me in app/views/public/posts/show.html.erb</p>
+<h1>投稿の詳細</h1>
+<div>
+  <h6>プロフィール画像</h6>
+  
+  <h6>ユーザー名</h6>
+  <%= @post.member.name %>
+  
+  <h4>画像</h4>
+    <%= image_tag @post.get_image %>
+  <h4>ジャンル（未）</h4>
+  <h4>タイトル</h4>
+    <%= @post.title %>
+  <h4>投稿本文</h4>
+    <%= @post.body %>
+  
+</div>

@@ -1,16 +1,13 @@
-<h1>投稿一覧</h1>
+<h1>みんなの投稿</h1>
 <% @posts.each do |posts| %>
 
-<h6>プロフィール画像</h6>
 <h6>ユーザーネーム</h6>
-<!--%= posts.member.nickname-->
+<!--%= link_to public_post_path(member_id) do % %= posts.member.nickname % % end % パス確認必要-->
 
 <h4>画像</h4>
-<%= image_tag image.get_image %>
+<%= image_tag posts.get_image %>
 <h4>ジャンル（未）</h4>
 <h4>タイトル</h4>
-<%= posts.title %>
-<h4>投稿本文</h4>
-<%= posts.body %>
+<%= link_to public_post_path(posts) do %><%= posts.title %><% end %>
 
 <% end %>
