@@ -2,7 +2,8 @@
 <% @posts.each do |posts| %>
 
 <h6>ユーザーネーム</h6>
-<!--%= link_to public_post_path(member_id) do % %= posts.member.nickname % % end % パス確認必要-->
+<%= link_to public_post_path(member_id) do %>< %= posts.member.nickname %><% end %> 
+<!--パス確認必要-->
 
 <h4>画像</h4>
 <%= image_tag posts.get_image %>

@@ -1,12 +1,13 @@
 <h2>新規会員登録</h2>
 
-<%= form_with model: @member, url: new_member_registration_path do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+<%= form_with model: @member, url: member_registration_path do |f| %>
+
+<%= render "public/shared/error_messages", resource: resource %>
 
   <div class="field">
-  <%= f.label :ニックネーム %><br>
-  <%= f.text_field :nickname %>
-</div>
+    <%= f.label :ニックネーム %><br>
+    <%= f.text_field :nickname %>
+  </div>
 
   <div class="field">
     <%= f.label :メースアドレス %><br />

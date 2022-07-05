@@ -14,9 +14,14 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
-  root to: 'homes#top'
 
   namespace :public do
+    resources :members, only: [:show, :edit, :update]
+
+  end
+
+  scope module: :public do
+    root to: 'homes#top'
     get 'about' => 'homes#about'
     resources :posts
   end
