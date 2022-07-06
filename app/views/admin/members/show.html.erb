@@ -1,2 +1,24 @@
-<h1>Admin::Members#show</h1>
-<p>Find me in app/views/admin/members/show.html.erb</p>
+<h1>ユーザーページ</h1>
+
+<h5>プロフィール画像</h5>
+  <% if @member.profile_image.attached? %>
+    <%= image_tag @member.image, size: "100x100" %>
+  <% else %>
+    <%= image_tag 'no-image-icon', size: "100x100" %>
+  <% end %>
+
+<h4>ニックネーム</h4>
+<%= @member.nickname %>
+<h4>メールアドレス</h4>
+<%= @member.email %>
+<h4>自己紹介文</h4>
+<%= @member.introduction %>
+
+<%= link_to '編集する', edit_admin_member_path(@member) %>
+</div>
+
+<div>
+  <%= link_to '投稿リストを見る', admin_posts_path %>
+  その人のみの投稿にする！
+</div>
+

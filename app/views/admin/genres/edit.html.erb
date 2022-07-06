@@ -4,6 +4,6 @@
 <%= f.text_field :genre %>
 
 <%= f.submit '編集' %>
-削除（ルーティング）
+<%= link_to '削除', admin_genre_path(@genre) %>
 
 <% end %>

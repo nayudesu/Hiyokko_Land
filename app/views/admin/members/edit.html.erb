@@ -1,2 +1,30 @@
-<h1>Admin::Members#edit</h1>
-<p>Find me in app/views/admin/members/edit.html.erb</p>
+<h1>ユーザーページ</h1>
+<%= form_with model: @member, url: admin_member_path(@member) do |f| %>
+
+  <h4>プロフィール画像</h4>
+  <%= f.file_field :profile_image, accept: "image/*" %>
+
+  <div class="field">
+    <%= f.label :ニックネーム %><br>
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メースアドレス %><br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :自己紹介文 %><br />
+    <%= f.text_area :introduction %>
+  </div>
+
+  <div class="field">
+    ユーザーステータス
+  </div>
+
+    <div class="actions">
+    <%= f.submit "変更を保存する" %>
+  </div>
+
+<% end %>
