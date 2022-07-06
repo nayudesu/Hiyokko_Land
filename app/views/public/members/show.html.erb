@@ -1,7 +1,12 @@
 <div>
 <h1>マイページ</h1>
 <h5>プロフィール画像</h5>
-<%= image_tag @member.get_profile_image %>
+  <% if @member.profile_image.attached? %>
+    <%= image_tag @member.image, size: "100x100" %>
+  <% else %>
+    <%= image_tag 'no-image-icon', size: "100x100" %>
+  <% end %>
+
 <h4>ニックネーム</h4>
 <%= @member.nickname %>
 <h4>メールアドレス</h4>
@@ -15,12 +20,13 @@
   <h4>画像</h4>
   <%= image_tag posts.get_image %>
   <h4>ジャンル（未）</h4>
+  
   <h4>タイトル</h4>
   <%= link_to public_post_path(posts) do %><%= posts.title %><% end %>
   <% end %>
 
   <% if @member == current_member %>
-    <%= link_to '編集する', edit_public_member_path(@member) %>
+    <%= link_to '編集する', edit_member_path(@member) %>
   <% end %>
 </div>
 

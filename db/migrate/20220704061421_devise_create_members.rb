@@ -31,7 +31,9 @@ class DeviseCreateMembers < ActiveRecord::Migration[6.1]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-      t.string :name
+      t.string :nickname
+      t.string :introduction
+      t.boolean :is_deleted, default: false, null: false
 
 
       t.timestamps null: false

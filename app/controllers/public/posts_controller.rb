@@ -1,9 +1,9 @@
 class Public::PostsController < ApplicationController
-  
+
   def new
     @post = Post.new
   end
-  
+
   def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
@@ -11,8 +11,8 @@ class Public::PostsController < ApplicationController
       redirect_to public_posts_show_path(@post)
     else
       render 'new'
-    end 
-  end 
+    end
+  end
 
   def index
     @posts = Post.all
@@ -25,16 +25,22 @@ class Public::PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-  
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to post_path(@post)
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to public_posts_path
-  end 
-    
+  end
+
   private
-  
+
   def post_params
     params.require(:post).permit(:image, :genre_id, :title, :body)
-  end 
+  end
 end

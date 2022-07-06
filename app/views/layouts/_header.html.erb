@@ -1,17 +1,17 @@
 <h3><%= link_to root_path do %>ロゴ<% end %></h3>
 <% if member_signed_in? %>
   <ul>
-      <li>ようこそ〇〇さん</li>
-      <li><%= link_to 'みんなの投稿', public_posts_path %></li>
-      <li><%= link_to '投稿フォーム', new_public_post_path %></li>
-      <li><%= link_to 'マイページ', edit_public_member_path(current.member_id) %></li>
+      <li>ようこそ<%= current_member.nickname %>さん</li>
+      <li><%= link_to 'みんなの投稿', posts_path %></li>
+      <li><%= link_to '投稿フォーム', new_post_path %></li>
+      <li><%= link_to 'マイページ', member_path(current_member) %></li>
       <li>いいねリスト</li>
       <li><%= link_to 'ログアウト', destroy_member_session_path, method: :delete %></li>
   </ul>
 <% elsif admin_signed_in? %>
   <ul>
     <li>ユーザー一覧</li>
-    <li><%= link_to '投稿一覧', public_posts_path %></li>
+    <li><%= link_to '投稿一覧', posts_path %></li>
     <li>ジャンル一覧</li>
     <li><%= link_to 'ログアウト',destroy_admin_session_path, method: :delete %></li>
   </ul>
