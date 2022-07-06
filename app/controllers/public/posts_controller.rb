@@ -2,13 +2,14 @@ class Public::PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @genres = Genre.all
   end
 
   def create
     @post = Post.new(post_params)
     @post.member_id = current_member.id
     if @post.save
-      redirect_to public_posts_show_path(@post)
+      redirect_to post_path(@post)
     else
       render 'new'
     end
@@ -20,6 +21,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @member = @post.member
   end
 
   def edit

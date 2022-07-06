@@ -1,4 +1,5 @@
 class Public::MembersController < ApplicationController
+
   def show
     @member = Member.find(params[:id])
     @posts = @member.posts
@@ -11,7 +12,7 @@ class Public::MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     @member = @member.update(member_params)
-    redirect_to edit_public_member_path(current_member.id)
+    redirect_to member_path(current_member.id)
   end
 
   private
