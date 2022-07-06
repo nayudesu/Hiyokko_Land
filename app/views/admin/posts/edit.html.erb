@@ -1,0 +1,17 @@
+<h1>投稿を編集</h1>
+
+<%= form_with model:@post, url: admin_posts_path(@post) do |f| %>
+
+<h4>画像</h4>
+  <%= f.file_field :image, accept: "image/*" %>
+<h4>ジャンル（未）</h4>
+<h4>タイトル</h4>
+  <%= f.file_field :title %>
+<h4>投稿本文</h4>
+  <%= f.text_area :body %>
+  
+  <%= f.submit '変更を保存する' %>
+  
+  <%= link_to '削除する', admin_posts_path %>
+
+<% end %>

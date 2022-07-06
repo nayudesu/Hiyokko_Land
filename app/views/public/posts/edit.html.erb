@@ -1,6 +1,6 @@
 <h1>投稿を編集</h1>
 
-<%= form_with model:@post, url: public_posts_path(@post) do |f| %>
+<%= form_with model:@post, url: post_path(@post) do |f| %>
 
 <h4>画像</h4>
   <%= f.file_field :image, accept: "image/*" %>
@@ -10,5 +10,5 @@
 <h4>投稿本文</h4>
 <%= f.text_area :body %>
 <%= f.submit '変更を保存する' %>
-<%= link_to '削除する', public_post_path(@post) %>
+<%= link_to '削除する', posts_path %>
 <% end %>

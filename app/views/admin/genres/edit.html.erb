@@ -1,0 +1,9 @@
+<h1>ジャンル編集</h1>
+<% form_with model: @genre, url: admin_genre(@genre) do |f| %>
+
+<%= f.text_field :genre %>
+
+<%= f.submit '編集' %>
+削除（ルーティング）
+
+<% end %>

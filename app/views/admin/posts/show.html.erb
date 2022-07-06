@@ -1,24 +1,20 @@
 <h1>投稿の詳細</h1>
 <div>
   <h6>プロフィール画像</h6>
-  <%= image_tag @post.member.get_profile_image %>
+     <%= image_tag @post.member.get_profile_image %>
 
   <h6>ユーザー名</h6>
-  <%= @post.member.name %>
+    <%= @post.member.name %>
 
   <h4>画像</h4>
-   <%= link_to post_path(@post) do %>
     <%= image_tag @post.get_image %>
-   <% end %>
   <h4>ジャンル（未）</h4>
   <h4>投稿日<%= @post.created.strftime('%Y/%m/%d') %></h4>
   <h4>タイトル</h4>
     <%= @post.title %>
   <h4>投稿本文</h4>
     <%= @post.body %>
-
-  <% if @post.member == current_member %>
-   <%= link_to '編集する',  edit_post_path(@post) %>
-  <% end %>
-
+  
+   <%= link_to '編集する',  edit_public_post_path(@post) %>
+   
 </div>
