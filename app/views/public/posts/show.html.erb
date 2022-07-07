@@ -1,5 +1,20 @@
 <h1>投稿の詳細</h1>
 <div>
+  <% if @post.favorited_by?(current_member) %>
+    <p>
+      <%= link_to post__favorites_path(@post), method: :delete do %>
+        ♥<%= @post.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to post_favorites_path(@post), method: :post do %>
+        ♡<%= @post.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
+</div>
+<div>
   <h6>プロフィール画像</h6>
   <% if @member.profile_image.attached? %>
     <%= image_tag @member.profile_image, size: "100x100" %>
@@ -30,4 +45,21 @@
    <%= link_to '編集する',  edit_post_path(@post) %>
   <% end %>
 
+</div>
+
+<div>
+  <%= @post.post_comments.each do |post_comment| %>
+   <%= post_comment.member.nickname %>
+   <%= post_comment.comment %>
+    <% if post_comment.user == current_user %>
+      <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <%= form_with model:[@post,@member], url: post_post_comments_path do |f| %>
+    <%= f.text_area :comment, row:'3', placeholder: "コメントをここに" %>
+    <%= f.submit '送信する' %>
+  <% end %>
 </div>

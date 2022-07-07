@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'homes#top'
-    resources :posts, only: [:show, :index, :edit, :update, :destory]
+    resources :posts, only: [:show, :index, :edit, :update, :destory] do
+      resources :post_comments, only: [:destory]
+    end
     resources :members, only: [:show, :index, :edit, :update]
     resources :genres
   end
@@ -25,7 +27,10 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get 'about' => 'homes#about'
-    resources :posts
+    resources :posts do
+      resources :post_comments, only: [:create, :update, :destory]
+      resource :favorites, only: [:create, :destroy]
+    end
     resources :members, only: [:show, :edit, :update]
 
   end

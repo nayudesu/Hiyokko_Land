@@ -22,13 +22,11 @@
   <div class="field">
     ユーザーステータス<br />
     <%= f.radio_button :is_deleted, :true %>退会
-    <%= f.radio_button :is_deleted, :falde %>有効
+    <%= f.radio_button :is_deleted, :false %>有効
   </div>
 
   <div class="actions">
     <%= f.submit "変更を保存する" %>
   </div>
-
-
 
 <% end %>

@@ -1,5 +1,5 @@
 class Admin::MembersController < ApplicationController
-  
+
   before_action :authenticate_admin!
 
   def show
@@ -30,7 +30,7 @@ class Admin::MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:profile_image, :nickname, :email, :introduction)
+    params.require(:member).permit(:profile_image, :nickname, :email, :introduction, :is_deleted)
   end
 
 end
