@@ -26,6 +26,7 @@ class Public::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @genres = Genre.all
   end
 
   def update

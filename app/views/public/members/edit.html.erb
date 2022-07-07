@@ -19,8 +19,12 @@
     <%= f.text_area :introduction %>
   </div>
 
-    <div class="actions">
+  <div class="actions">
     <%= f.submit "変更を保存する" %>
+  </div>
+  
+  <div class="actions">
+    <%= link_to "退会する", public_unsubscribe_path(@member) %>
   </div>
 
 <% end %>

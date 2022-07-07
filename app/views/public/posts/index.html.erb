@@ -2,7 +2,7 @@
   <% @posts.each do |posts| %>
 
 <h6>ユーザーネーム</h6>
-  <%= link_to post_path(member_id) do %>< %= posts.member.nickname %><% end %>
+  <%= link_to member_path(posts.member) do %><%= posts.member.nickname %><% end %>
   <!--パス確認必要-->
 
 <h4>画像</h4>
@@ -13,8 +13,8 @@
       <%= image_tag 'no_image', size: "50x50" %>
     <% end %>
   <% end %>
-<h4>ジャンル（未）</h4>
-
+<h4>ジャンル</h4>
+  <%= posts.genre.name %>
 <h4>タイトル</h4>
 <%= link_to post_path(posts) do %><%= posts.title %><% end %>
 

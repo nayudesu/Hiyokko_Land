@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
 
   namespace :public do
-
+    get 'members/:id/unsubscribe' => 'members#unsubscribe', as:'unsubscribe'
+    patch '/members/:id/withdraw' => 'members#withdraw', as:'withdraw'
   end
 
   scope module: :public do

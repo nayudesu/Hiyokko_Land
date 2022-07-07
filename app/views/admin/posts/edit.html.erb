@@ -4,7 +4,8 @@
 
 <h4>画像</h4>
   <%= f.file_field :image, accept: "image/*" %>
-<h4>ジャンル（未）</h4>
+<h4>ジャンル</h4>
+  <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --") %>
 <h4>タイトル</h4>
   <%= f.file_field :title %>
 <h4>投稿本文</h4>
