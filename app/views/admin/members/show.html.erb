@@ -8,11 +8,18 @@
   <% end %>
 
 <h4>ニックネーム</h4>
-<%= @member.nickname %>
+  <%= @member.nickname %>
 <h4>メールアドレス</h4>
-<%= @member.email %>
+  <%= @member.email %>
 <h4>自己紹介文</h4>
-<%= @member.introduction %>
+  <%= @member.introduction %>
+<h4>ユーザーステータス</h4>
+  <% if @member.is_deleted == false%>
+    有効
+  <% else %>
+    無効
+  <% end %>
+
 
 <%= link_to '編集する', edit_admin_member_path(@member) %>
 </div>

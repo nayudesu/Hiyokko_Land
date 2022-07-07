@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
-
   namespace :public do
     get 'members/:id/unsubscribe' => 'members#unsubscribe', as:'unsubscribe'
     patch '/members/:id/withdraw' => 'members#withdraw', as:'withdraw'

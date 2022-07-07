@@ -1,4 +1,7 @@
 class Admin::MembersController < ApplicationController
+  
+  before_action :authenticate_admin!
+
   def show
     @member = Member.find(params[:id])
     @posts = @member.posts
@@ -9,7 +12,7 @@ class Admin::MembersController < ApplicationController
   end
 
   def edit
-  　@member = Member.find(params[:id])
+    @member = Member.find(params[:id])
   end
 
   def update
