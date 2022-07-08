@@ -1,2 +1,51 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+body{
+ text-align: center;
+ background-color: #fabea7;
+}
+
+}
+nav{
+ height: 100px;
+ display: flex;
+ justify-content: space-around;
+}
+
+ul{
+ text-align: center;
+ display: flex;
+ padding: 20px;
+ justify-content: space-around;
+}
+
+li{
+ list-style: none;
+ margin-left: 20px;
+ font-size: 20px;
+}
+
+a{
+ color: black;
+}
+
+p{
+ line-heigth: 2.5;
+}
+
+.top{
+ padding: 30px;
+ text-align: center;
+}
+
+.about {
+ padding: 30px;
+}
+
+.log {
+ padding: 20px;
+ border: 1px solid　#ffffff;
+ background-color: white;
+ width: 50%;
+}

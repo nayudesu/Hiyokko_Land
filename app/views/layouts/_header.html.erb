@@ -1,25 +1,27 @@
-<h3><%= link_to root_path do %>ロゴ<% end %></h3>
-<% if member_signed_in? %>
+<nav>
+  <h3 class='logo'><%= link_to root_path do %>ロゴ<% end %></h3>
+    <% if member_signed_in? %>
   <ul>
       <li>ようこそ<%= current_member.nickname %>さん</li>
-      <li><%= link_to 'みんなの投稿', posts_path %></li>
-      <li><%= link_to '投稿フォーム', new_post_path %></li>
-      <li><%= link_to 'マイページ', member_path(current_member) %></li>
-      <li>いいねリスト</li>
-      <li><%= link_to 'ログアウト', destroy_member_session_path, method: :delete %></li>
+      <li><%= link_to posts_path do %><i class="fas fa-users"></i>みんなの投稿<% end %></li>
+      <li><%= link_to new_post_path do %><i class="fas fa-pen"></i>投稿フォーム<% end %></li>
+      <li><%= link_to member_path(current_member) do %><i class="fas fa-user"></i>マイページ<% end %></li>
+      <li><i class="far fa-heart"></i>いいねリスト</li>
+      <li><%= link_to destroy_member_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
   </ul>
 <% elsif admin_signed_in? %>
   <ul>
-    <li><%= link_to 'ユーザー一覧', admin_members_path %></li>
-    <li><%= link_to '投稿一覧', admin_posts_path %></li>
-    <li><%= link_to 'ジャンル一覧', admin_genres_path %></li>
-    <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
+    <li><%= link_to admin_members_path do %><i class="fas fa-address-book"></i>ユーザー一覧<% end %></li>
+    <li><%= link_to admin_posts_path do %><i class="fas fa-bars"></i>投稿一覧<% end %></li>
+    <li><%= link_to admin_genres_path do %><i class="fas fa-bookmark"></i>ジャンル一覧<% end %></li>
+    <li><%= link_to destroy_admin_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
   </ul>
 <% else %>
   <ul>
-    <li><%= link_to 'Aboutページ', about_path %></li>
-    <li><%= link_to '新規会員登録', new_member_registration_path %></li>
-    <li><%= link_to 'ログイン', new_member_session_path %></li>
-    <li><%= link_to 'スタッフログイン', new_admin_session_path %></li>
+    <li><%= link_to about_path do %><i class="fas fa-star"></i>Aboutページ<% end %></li>
+    <li><%= link_to new_member_registration_path do %><i class="fas fa-user-plus"></i>新規会員登録<% end %></li>
+    <li><%= link_to  new_member_session_path do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
+    <li><%= link_to new_admin_session_path do %><i class="fas fa-id-card-alt"></i>スタッフログイン<% end %></li>
   </ul>
 <% end %>
+</nav>

@@ -4,7 +4,7 @@ class Admin::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @member = @post.member
+    @post_comment = PostComments.new
   end
 
   def index

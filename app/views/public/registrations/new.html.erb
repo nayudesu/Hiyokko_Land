@@ -1,4 +1,4 @@
-<h2>新規会員登録</h2>
+<h3>新規会員登録</h3>
 
 <%= form_with model: @member, url: member_registration_path do |f| %>
 
@@ -6,12 +6,12 @@
 
   <div class="field">
     <%= f.label :ニックネーム %><br>
-    <%= f.text_field :nickname %>
+    <%= f.text_field :nickname, size: 30 %>
   </div>
 
   <div class="field">
-    <%= f.label :メースアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", size: 30  %>
   </div>
 
   <div class="field">
@@ -19,12 +19,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", size: 30  %>
   </div>
 
   <div class="field">
     <%= f.label :パスワード（２回目） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", size: 30  %>
   </div>
 
   <div class="actions">
@@ -33,3 +33,5 @@
 <% end %>
 
 すでにアカウントをお持ちの方は<%= render "public/shared/links" %>
+
+</div>
