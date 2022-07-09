@@ -6,9 +6,11 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   has_one_attached :image
-  
+
   def favorited_by?(member)
+    print('==========================')
+    print(favorites.inspect)
     favorites.exists?(member_id: member.id)
   end
-  
+
 end

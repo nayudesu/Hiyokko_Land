@@ -13,6 +13,11 @@
 <%= @member.email %>
 <h4>自己紹介文</h4>
 <%= @member.introduction %>
+
+  <% if @member == current_member %>
+    <%= link_to '編集する', edit_member_path(@member) %>
+  <% end %>
+
 </div>
 
 <div>
@@ -25,14 +30,12 @@
       <%= image_tag 'no_image', size: "50x50" %>
     <% end %>
   <% end %>
-  <h4>ジャンル（未）</h4>
+  <h4>ジャンル</h4>
+  <%= posts.genre.name %>
 
   <h4>タイトル</h4>
   <%= link_to post_path(posts) do %><%= posts.title %><% end %>
   <% end %>
 
-  <% if @member == current_member %>
-    <%= link_to '編集する', edit_member_path(@member) %>
-  <% end %>
 </div>
 
