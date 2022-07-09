@@ -8,9 +8,11 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   def favorited_by?(member)
-    print('==========================')
-    print(favorites.inspect)
     favorites.exists?(member_id: member.id)
+  end
+
+  def self.looks(keyword)
+    Post.where('title like ?',"%#{keyword}%") 
   end
 
 end

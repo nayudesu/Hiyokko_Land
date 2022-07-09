@@ -14,4 +14,8 @@ class Member < ApplicationRecord
     super && (is_deleted == false)
   end
 
+  def self.looks(keyword)
+    Member.where('nickname like ?',"%#{keyword}%")
+  end
+
 end

@@ -1,0 +1,13 @@
+<h3>＃<%= @keyword %>の検索結果</h3>
+
+  <% if @range == 'ユーザー' %>
+    <% @members.each do |member| %>
+      <%= member.nickname %>
+    <% end %>
+  <% elsif @range == '投稿' %>
+    <% @posts.each do |post| %>
+      <%= post.title %>
+    <% end %>
+  <% else %>
+    検索結果が見つかりませんでした。
+  <% end %>

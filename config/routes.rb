@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'search' => 'searches#search'
 
   devise_for :admin,skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
@@ -29,6 +27,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get 'about' => 'homes#about'
+    get 'search' => 'searches#search'
     resources :posts do
       resources :post_comments, except: [:index, :show, :new, :edit]
       resource :favorites, only: [:create, :destroy]
