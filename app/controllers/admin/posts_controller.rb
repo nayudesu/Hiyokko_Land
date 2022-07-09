@@ -4,7 +4,8 @@ class Admin::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post_comment = PostComments.new
+    @member = @post.member
+    @post_comments = PostComment.all
   end
 
   def index

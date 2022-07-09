@@ -27,3 +27,10 @@
     <%= link_to '編集する', edit_admin_post_path(@post) %>
 </div>
 
+<div>
+  <% @post_comments.each do |post_comment| %>
+  <%= post_comment.member.nickname %>
+  <%= post_comment.comment %>
+  <%= link_to '削除する', 
+  <% end %>
+</div>
