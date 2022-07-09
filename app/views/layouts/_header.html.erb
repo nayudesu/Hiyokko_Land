@@ -6,7 +6,7 @@
       <li><%= link_to posts_path do %><i class="fas fa-users"></i>みんなの投稿<% end %></li>
       <li><%= link_to new_post_path do %><i class="fas fa-pen"></i>投稿フォーム<% end %></li>
       <li><%= link_to member_path(current_member) do %><i class="fas fa-user"></i>マイページ<% end %></li>
-      <li><i class="far fa-heart"></i>いいねリスト</li>
+      <li><i class="fas fa-heart"></i>いいねリスト</li>
       <li><%= link_to destroy_member_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
   </ul>
 <% elsif admin_signed_in? %>
@@ -24,4 +24,11 @@
     <li><%= link_to new_admin_session_path do %><i class="fas fa-id-card-alt"></i>スタッフログイン<% end %></li>
   </ul>
 <% end %>
+
+  <%= form_with url: search_path, method: :get do |f| %>
+    <%= f.text_field :keyword %>
+    <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
+    <%= f.submit '検索' %>
+  <% end %>
+
 </nav>

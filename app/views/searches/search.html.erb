@@ -1,0 +1,14 @@
+<h3>検索結果</h3>
+
+<% if @range = 'User' %>
+
+  <% @users.each do |user| %>
+    <%= user.nickname %>
+  <% end %>
+  
+<% else %>
+  <% @posts.each do |post| %>
+    <%= post.title %>
+  <% end %>
+<% end %>
+  
