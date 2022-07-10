@@ -5,9 +5,7 @@
       <%= member.nickname %>
     <% end %>
   <% elsif @range == '投稿' %>
-    <% @posts.each do |post| %>
-      <%= post.title %>
-    <% end %>
+    <%= render 'public/posts/post', posts: @posts %>
   <% else %>
     検索結果が見つかりませんでした。
   <% end %>

@@ -1,0 +1,24 @@
+<% posts.each do |post| %>
+
+  <h6>ユーザーネーム</h6>
+    <%= link_to member_path(post.member) do %>
+      <%= post.member.nickname %>
+    <% end %>
+
+  <h4>画像</h4>
+    <%= link_to post_path(posts) do %>
+      <% if post.image.attached? %>
+        <%= image_tag post.image, size: "50x50" %>
+      <% else %>
+        <%= image_tag 'no-image', size: "50x50" %>
+      <% end %>
+    <% end %>
+
+  <h4>ジャンル</h4>
+    <%= post.genre.name %>
+
+  <h4>タイトル</h4>
+    <%= link_to post_path(post) do %>
+      <%= post.title %>
+    <% end %>
+<% end %>

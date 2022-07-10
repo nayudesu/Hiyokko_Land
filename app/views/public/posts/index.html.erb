@@ -1,21 +1,2 @@
 <h1>みんなの投稿</h1>
-  <% @posts.each do |posts| %>
-
-<h6>ユーザーネーム</h6>
-  <%= link_to member_path(posts.member) do %><%= posts.member.nickname %><% end %>
-  <!--パス確認必要-->
-
-<h4>画像</h4>
-  <%= link_to post_path(posts) do %>
-    <% if posts.image.attached? %>
-      <%= image_tag posts.image, size: "50x50" %>
-    <% else %>
-      <%= image_tag 'no_image', size: "50x50" %>
-    <% end %>
-  <% end %>
-<h4>ジャンル</h4>
-  <%= posts.genre.name %>
-<h4>タイトル</h4>
-<%= link_to post_path(posts) do %><%= posts.title %><% end %>
-
-<% end %>
+  <%= render 'post', posts: @posts %>

@@ -18,7 +18,7 @@ class Public::FavoritesController < ApplicationController
   def favorite
     @member = Member.find(params[:id])
     favorites = Favorite.where(member_id: @member.id).pluck(:post_id)
-    @favorite_posts = Post.where(id: favorites)
+    @posts = Post.where(id: favorites)
   end
 
 end
