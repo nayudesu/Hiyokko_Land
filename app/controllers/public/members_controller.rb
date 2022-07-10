@@ -1,5 +1,5 @@
 class Public::MembersController < ApplicationController
-  
+
   before_action :authenticate_member!
 
   def show
@@ -16,24 +16,24 @@ class Public::MembersController < ApplicationController
     @member = @member.update(member_params)
     redirect_to member_path(current_member.id)
   end
-  
+
   def unsubscribe
     @member = Member.find(params[:id])
-  end 
-  
+  end
+
   def withdraw
     @member = Member.find(params[:id])
     @member.update(is_deleted: true)
     reset_session
     flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
     redirect_to root_path
-  end 
+  end
 
   private
 
   def member_params
     params.require(:member).permit(:profile_image, :nickname, :email, :introduction)
   end
-  
-  
+
+
 end

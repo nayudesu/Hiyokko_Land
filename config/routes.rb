@@ -32,7 +32,11 @@ Rails.application.routes.draw do
       resources :post_comments, except: [:index, :show, :new, :edit]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :members, only: [:show, :edit, :update]
+    resources :members, only: [:show, :edit, :update] do 
+      member do
+        get 'favorites' => 'favorites#favorite'
+      end 
+    end
 
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
