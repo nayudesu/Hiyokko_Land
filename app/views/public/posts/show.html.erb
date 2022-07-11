@@ -1,20 +1,5 @@
 <h1>投稿の詳細</h1>
-<div>
-  <% if @post.favorited_by?(current_member) %>
-    <p>
-      <%= link_to post_favorites_path(@post.id), method: :delete do %>
-        <i class="fas fa-heart"></i>　<%= @post.favorites.count %> いいね
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_favorites_path(@post.id), method: :post do %>
-        <i class="far fa-heart"></i>　<%= @post.favorites.count %> いいね
-      <% end %>
-    </p>
-  <% end %>
-
-</div>
+  <%= render 'favorite', post: @post %>
 <div>
   <h6>プロフィール画像</h6>
   <% if @member.profile_image.attached? %>
