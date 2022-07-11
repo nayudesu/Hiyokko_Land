@@ -1,5 +1,7 @@
 <h1>投稿の詳細</h1>
+<div class='favorite'>
   <%= render 'favorite', post: @post %>
+</div>
 <div>
   <h6>プロフィール画像</h6>
   <% if @member.profile_image.attached? %>
@@ -33,10 +35,10 @@
 
 </div>
 
-<div>
+<div class = 'post_comment'>
   <%= render 'public/post_comments/post_comment', post: @post %>
 </div>
 
-<div>
+<div class = 'comment'>
   <%= render 'public/post_comments/comment', post: @post, post_comment: @post_comment %>
 </div>
