@@ -29,13 +29,13 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
     get 'search' => 'searches#search'
     resources :posts do
-      resources :post_comments, except: [:index, :show, :new, :edit]
+      resources :post_comments, except: [:index, :show, :new, :edit, :update]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :members, only: [:show, :edit, :update] do 
+    resources :members, only: [:show, :edit, :update] do
       member do
         get 'favorites' => 'favorites#favorite'
-      end 
+      end
     end
 
   end
