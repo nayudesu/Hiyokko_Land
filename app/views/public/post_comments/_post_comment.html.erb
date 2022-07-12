@@ -2,6 +2,6 @@
   <%= post_comment.member.nickname %>
   <%= post_comment.comment %>
     <% if post_comment.member == current_member %>
-      <%= link_to '削除', post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true %>
+      <%= link_to '削除', post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"}, remote: true %>
     <% end %>
 <% end %>
