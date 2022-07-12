@@ -19,4 +19,8 @@ class Post < ApplicationRecord
     Post.where(['genre like ?'], "%#{genre}%")
   end
 
+  scope :latest, -> {order(created_at: :desc)} #created_at=投稿日のカラム#desc＝大きい方から小さい方に並ぶ(降順)
+  scope :old, -> {order(created_at: :asc)} #asc＝小さい方から大きい方に並ぶ(昇順)
+  scope :favorite_count, -> {order(favorite: :desc)} #
+
 end
