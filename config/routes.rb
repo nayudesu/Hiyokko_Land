@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :post_comments, except: [:index, :show, :new, :edit, :update]
       resource :favorites, only: [:create, :destroy]
+      get 'search' => 'posts#search'
     end
     resources :members, only: [:show, :edit, :update] do
       member do

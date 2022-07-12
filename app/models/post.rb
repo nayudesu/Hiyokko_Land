@@ -12,7 +12,11 @@ class Post < ApplicationRecord
   end
 
   def self.looks(keyword)
-    Post.where('title like ?',"%#{keyword}%") 
+    Post.where('title like ?',"%#{keyword}%")
+  end
+
+  def self.search(name)
+    Post.where([' like ?'], "%#{name}%")
   end
 
 end

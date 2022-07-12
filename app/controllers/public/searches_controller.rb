@@ -1,7 +1,6 @@
 class Public::SearchesController < ApplicationController
 
   def search
-
     @range = params[:range]
     @keyword = params[:keyword]
 

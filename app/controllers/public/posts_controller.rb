@@ -19,6 +19,7 @@ class Public::PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @genres = Genre.all
   end
 
   def show
@@ -42,6 +43,11 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to public_posts_path
+  end
+
+  def search
+    @genre = params[:genre_id]
+    @posts = Post.search(@genre)
   end
 
   private
