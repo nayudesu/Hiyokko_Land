@@ -15,8 +15,8 @@ class Post < ApplicationRecord
     Post.where('title like ?',"%#{keyword}%")
   end
 
-  def self.search(name)
-    Post.where([' like ?'], "%#{name}%")
+  def self.search(genre)
+    Post.where(['genre like ?'], "%#{genre}%")
   end
 
 end
