@@ -15,12 +15,12 @@ class Post < ApplicationRecord
     Post.where('title like ?',"%#{keyword}%")
   end
 
-  def self.search(genre)
-    Post.where(['genre like ?'], "%#{genre}%")
+  def self.search(genre_id)
+    Post.where(genre_id: genre_id)
   end
 
-  scope :latest, -> {order(created_at: :desc)} #created_at=投稿日のカラム#desc＝大きい方から小さい方に並ぶ(降順)
-  scope :old, -> {order(created_at: :asc)} #asc＝小さい方から大きい方に並ぶ(昇順)
-  scope :favorite_count, -> {order(favorite: :desc)} #
+  scope :latest, -> {order(created_at: :desc)}
+  scope :old, -> {order(created_at: :asc)}
+  scope :favorite_count, -> {order(favorite: :desc)}
 
 end

@@ -46,8 +46,8 @@ class Public::PostsController < ApplicationController
   end
 
   def search
-    @genre = params[:genre_id]
-    @posts = Post.search(@genre)
+    @posts = Post.search(params[:genre_id])
+    @genre = Genre.find(params[:genre_id])
   end
 
   private
