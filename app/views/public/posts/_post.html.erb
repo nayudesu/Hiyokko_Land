@@ -1,24 +1,30 @@
 <% posts.each do |post| %>
-
-  <h6>ユーザーネーム</h6>
-    <%= link_to member_path(post.member) do %>
-      <%= post.member.nickname %>
-    <% end %>
-
-  <h4>画像</h4>
-    <%= link_to post_path(posts) do %>
-      <% if post.image.attached? %>
-        <%= image_tag post.image, size: "50x50" %>
-      <% else %>
-        <%= image_tag 'no-image', size: "50x50" %>
-      <% end %>
-    <% end %>
-
-  <h4>ジャンル</h4>
-    <%= post.genre.name %>
-
-  <h4>タイトル</h4>
+<div class='post'>
+  <!--ジャンル-->
+  <h6>#<%= post.genre.name %></h6>
+  <!--タイトル-->
+  <h4>
     <%= link_to post_path(post) do %>
       <%= post.title %>
     <% end %>
+  </h4>
+　<!--ユーザーネーム-->
+  <h6>
+    <%= link_to member_path(post.member) do %>
+      <%= post.member.nickname %>さん
+    <% end %>
+　</h6>
+　<!--画像-->
+  <h4>
+    <%= link_to post_path(posts) do %>
+      <% if post.image.attached? %>
+        <%= image_tag post.get_image(200,200) %>
+      <% else %>
+        <%= image_tag 'no-image', size: "200x200" %>
+      <% end %>
+    <% end %>
+  </h4>
+  <!--本文-->
+    <%= post.body %>
+</div>
 <% end %>

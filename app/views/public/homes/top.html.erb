@@ -1,7 +1,17 @@
 <div class='top'>
-  <h3>離乳食からインスタ映えまで！楽しい子育ての情報がたくさん！！</h3>
-  <h1>ひよっこランド</h1>
-</div>
-<div>
-  <%= render 'public/posts/post', posts: @all_ranks %>
+  <div class='contner'>
+    <div class='row'>
+      <div class='col'>
+        <h3>離乳食からインスタ映えまで！楽しい子育ての情報がたくさん！！</h3>
+        <h1>ひよっこランド</h1>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-8'>
+        <div class='posts'>
+          <%= render 'public/posts/post', posts: @all_ranks %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

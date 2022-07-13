@@ -12,6 +12,11 @@ nav{
  justify-content: space-around;
 }
 
+.logo {
+ padding: 20px;
+ font-family: 'Kosugi Maru';
+}
+
 ul{
  text-align: center;
  display: flex;
@@ -21,12 +26,13 @@ ul{
 
 li{
  list-style: none;
- margin-left: 20px;
- font-size: 20px;
+ margin-left: 15px;
+ font-size: 18px;
 }
 
 a{
  color: black;
+ border-bottom: solid 1px;
 }
 
 p{
@@ -48,4 +54,12 @@ p{
  background-color: white;
  width: 50%;
  margin: 0 auto;
+}
+
+.posts {
+ display: flex;
+}
+
+.post {
+  padding: 20px;
 }
