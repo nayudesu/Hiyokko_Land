@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
+  devise_scope :member do
+    post 'members/guest_sign_in', to: 'members/sessions#guest_sign_in'
+  end
+
   namespace :public do
     get 'members/:id/unsubscribe' => 'members#unsubscribe', as:'unsubscribe'
     patch '/members/:id/withdraw' => 'members#withdraw', as:'withdraw'

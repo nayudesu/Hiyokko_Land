@@ -26,4 +26,11 @@ class Member < ApplicationRecord
     Member.where('nickname like ?',"%#{keyword}%")
   end
 
+  def self.guest
+    find_or_create_by!(nickname: 'ゲスト' ,email: 'guest@example.com') do |member|
+      member.password = SecureRandom.urlsafe_base64
+      member.nickname = "ゲスト"
+    end
+  end
+
 end
