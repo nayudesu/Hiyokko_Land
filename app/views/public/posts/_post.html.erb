@@ -18,9 +18,9 @@
   <h4>
     <%= link_to post_path(posts) do %>
       <% if post.image.attached? %>
-        <%= image_tag post.get_image(200,200) %>
+        <%= image_tag post.get_image(300,300) %>
       <% else %>
-        <%= image_tag 'no-image', size: "200x200" %>
+        <%= image_tag 'no-image', size: "300x300" %>
       <% end %>
     <% end %>
   </h4>
