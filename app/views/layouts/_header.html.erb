@@ -1,6 +1,6 @@
 <nav>
   <h3 class='logo'><%= link_to root_path do %>ひよっこランド<% end %></h3>
-    <% if member_signed_in? %>
+  <% if member_signed_in? %>
   <ul>
       <li>ようこそ<%= current_member.nickname %>さん</li>
       <li class='btn'><%= link_to posts_path do %><i class="fas fa-users"></i>みんなの投稿<% end %></li>
@@ -13,6 +13,7 @@
         <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
         <%= f.submit '検索' %>
       <% end %>
+
   </ul>
 <% elsif admin_signed_in? %>
   <ul>
@@ -20,6 +21,12 @@
     <li class='btn'><%= link_to admin_posts_path do %><i class="fas fa-bars"></i>投稿一覧<% end %></li>
     <li class='btn'><%= link_to admin_genres_path do %><i class="fas fa-bookmark"></i>ジャンル一覧<% end %></li>
     <li class='btn'><%= link_to destroy_admin_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
+    <%= form_with url: search_path, method: :get do |f| %>
+      <%= f.text_field :keyword %>
+      <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
+      <%= f.submit '検索' %>
+    <% end %>
+
   </ul>
 <% else %>
   <ul>
@@ -29,5 +36,4 @@
     <li class='btn'><%= link_to new_admin_session_path do %><i class="fas fa-id-card-alt"></i>スタッフログイン<% end %></li>
   </ul>
 <% end %>
-
 </nav>
