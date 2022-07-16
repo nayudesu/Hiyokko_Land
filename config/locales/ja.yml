@@ -1,0 +1,11 @@
+ja:
+ activerecord:
+   attributes:
+     member:
+       nickname: ニックネーム
+       introduction: 自己紹介
+     post:
+       title: タイトル
+       body: 投稿内容
+     post_comment:
+       comment: コメント

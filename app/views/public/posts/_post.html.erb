@@ -1,9 +1,9 @@
 <% posts.each do |post| %>
 <div class='post'>
   <!--ジャンル-->
-  <h6>#<%= post.genre.name %></h6>
+  <h6 style="text-align:left">#<%= post.genre.name %></h6>
   <!--タイトル-->
-  <h4>
+  <h4 style='border: 2px double #333'>
     <%= link_to post_path(post) do %>
       <%= post.title %>
     <% end %>
