@@ -8,12 +8,6 @@
       <%= post.title %>
     <% end %>
   </h4>
-　<!--ユーザーネーム-->
-  <h6>
-    <%= link_to member_path(post.member) do %>
-      <%= post.member.nickname %>さん
-    <% end %>
-　</h6>
 　<!--画像-->
   <h4>
     <%= link_to post_path(posts) do %>
@@ -24,6 +18,14 @@
       <% end %>
     <% end %>
   </h4>
+  　<!--ユーザーネーム-->
+  <h6>
+    （投稿者）
+    <%= link_to member_path(post.member) do %>
+      <%= post.member.nickname %>さん
+    <% end %>
+　</h6>
+
   <!--本文-->
     <%#= post.body %>
 </div>

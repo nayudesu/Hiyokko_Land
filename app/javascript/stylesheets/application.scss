@@ -37,6 +37,7 @@ a{
 
 p{
  line-heigth: 2.5;
+ text-decoration: underline;
 }
 
 .logo {
@@ -45,18 +46,21 @@ p{
  font-weight: 900;
 }
 
-.title {
- font-size: 500%;
+.big-logo {
+ font-size: 7vw;
 }
 
 .sub {
  font-family: "TsukuARdGothic-Regular";
  font-weight: 500;
  margin-top: 70px;
+ font-size: 4.5vmin;
 }
 
 span{
- background: linear-gradient(transparent 65%, #ffffff 70%);
+ line-heigth: 2.5;
+ background-color: white;
+ display: inline-block;
 }
 
 .btn {
@@ -70,7 +74,7 @@ span{
 
 .about {
  padding: 30px;
- font-size: 20px;
+ font-size: 2.5vmin;
 }
 
 .log {
@@ -86,5 +90,9 @@ span{
 }
 
 .post {
-  padding: 20px;
+ padding: 10px;
+ margin: 10px;
+ border: 1px solid #fff;
+ background-color: #fff;
+ box-shadow: 4px 4px 8px #ccc;
 }
