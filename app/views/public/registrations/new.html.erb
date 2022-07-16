@@ -7,26 +7,19 @@
 <%= render "public/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :ニックネーム %><br>
-    <%= f.text_field :nickname, size: 30 %>
+    <%= f.text_field :nickname, placeholder: "ニックネーム", size: 30 %>
   </div>
 
   <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", size: 30  %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",size: 30  %>
   </div>
 
   <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", size: 30  %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード６文字以上", size: 30  %>
   </div>
 
   <div class="field">
-    <%= f.label :パスワード（２回目） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", size: 30  %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（２回目）", size: 30  %>
   </div>
 
   <div class="actions">

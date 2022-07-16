@@ -1,6 +1,8 @@
-<div class='log'>
-<h3>ログイン</h3>
-<%= form_with model: @member, url: new_member_session_path do |f| %>
+<div class='sign'>
+    <div class='sign-top'>
+      <h3>ログイン</h3>
+    </div>
+  <%= form_with model: @member, url: new_member_session_path do |f| %>
   <div class="field">
     <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

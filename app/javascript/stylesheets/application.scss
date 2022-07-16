@@ -4,6 +4,7 @@
 body {
  text-align: center;
  background-color: #fffac2;
+ font-family: "TsukuARdGothic-Regular";
 }
 
 header {
@@ -51,7 +52,6 @@ p{
 }
 
 .sub {
- font-family: "TsukuARdGothic-Regular";
  font-weight: 500;
  margin-top: 70px;
  font-size: 4.5vmin;
@@ -106,6 +106,12 @@ span{
 }
 
 .sign-top {
- padding: 5px;
+ padding: 10px;
  background-color: #ccc;
+ font-weight: bolder;
+}
+
+.field {
+ padding: 10px;
+ font-size: 2vw;
 }
