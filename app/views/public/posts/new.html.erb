@@ -1,13 +1,48 @@
-<h1>新規投稿</h1>
-  <%= form_with model:@post, url: posts_path do |f| %>
-
-<h4>画像</h4>
-  <%= f.file_field :image, accept: "image/*" %>
-<h4>ジャンル</h4>
-  <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --") %>
-<h4>タイトル</h4>
-  <%= f.text_field :title %>
-<h4>投稿本文</h4>
-  <%= f.text_area :body %>
-  <%= f.submit '投稿する' %>
-  <% end %>
+<div class='container'>
+  <div class='row justify-content-center'>
+    <div class='col-sm-8 sign'>
+      <div class='post-top'>
+        新規投稿
+      </div>
+      <div class='new'>
+          <%= form_with model:@post, url: posts_path do |f| %>
+          <table>
+            <tr>
+              <th>
+                画像
+              </th>
+              <td>
+                <%= f.file_field :image, accept: "image/*" %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                ジャンル
+              </th>
+              <td>
+                <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --") %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                タイトル
+              </th>
+              <td>
+                <%= f.text_field :title, class: 'post-body' %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                投稿内容
+              </th>
+              <td>
+                <%= f.text_area :body, class: 'post-body', rows:10 %>
+              </td>
+            </tr>
+          </table>
+      <center><%= f.submit '投稿する', class: 'post-btn' %></center>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>

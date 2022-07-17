@@ -1,6 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
  text-align: center;
  background-color: #fffac2;
@@ -13,9 +19,19 @@ header {
  background-color: #ffffff;
 }
 
+.logo-mark {
+  display: block;
+  min-width: 250px;
+  padding-top: 25px;
+  padding-left: 25px;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
 nav{
  display: flex;
  justify-content: space-around;
+ width: 100%;
 }
 
 ul{
@@ -41,10 +57,19 @@ p{
  text-decoration: underline;
 }
 
+th {
+ padding: 1rem;
+}
+
+td {
+ padding: 1rem;
+}
 .logo {
  padding: 20px;
  font-family: "TsukuARdGothic-Regular";
  font-weight: 900;
+ width: 100%;
+ display: flex;
 }
 
 .big-logo {
@@ -65,6 +90,7 @@ span{
 
 .btn {
  background-color: orange;
+ margin: 0 0.5rem;
 }
 
 .top{
@@ -120,4 +146,43 @@ span{
 
 .actions {
  margin-bottom: 10px;
+}
+
+.new {
+ margin: 5%;
+ text-align: center;
+}
+
+.post-top {
+ padding: 10px;
+ background-color: #f69679;
+ font-weight: bolder;
+ border-radius: 20px 20px 0 0;
+ font-size: 2.5rem;
+}
+
+img {
+ width: 100%;
+}
+
+.post-body {
+ width: 30rem;
+}
+
+.post-btn {
+ width: 50%;
+ background-color: #f69679;
+}
+
+@media screen and (max-width: 992px) {
+.logo { display: block; }
+.posts {
+ flex-direction: column;
+}
+
+header ul {
+ flex-direction: column;
+ gap: 12px;
+ width: 100%;
+}
 }
