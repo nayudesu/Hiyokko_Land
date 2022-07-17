@@ -103,15 +103,21 @@ span{
  margin: 70px auto;
  width: 50%;
  background-color: #fff;
+ border-radius: 20px;
 }
 
 .sign-top {
  padding: 10px;
- background-color: #ccc;
+ background-color: orange;
  font-weight: bolder;
+ border-radius: 20px 20px 0 0;
 }
 
 .field {
  padding: 10px;
- font-size: 2vw;
+ font-size: 150%;
+}
+
+.actions {
+ margin-bottom: 10px;
 }
