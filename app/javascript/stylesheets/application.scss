@@ -64,6 +64,11 @@ th {
 td {
  padding: 1rem;
 }
+
+img {
+ width: 100%;
+}
+
 .logo {
  padding: 20px;
  font-family: "TsukuARdGothic-Regular";
@@ -161,10 +166,6 @@ span{
  font-size: 2.5rem;
 }
 
-img {
- width: 100%;
-}
-
 .post-body {
  width: 30rem;
 }
@@ -172,6 +173,21 @@ img {
 .post-btn {
  width: 50%;
  background-color: #f69679;
+}
+
+.search {
+ flex-direction: column;
+ padding: 0.5rem;
+ text-align: left;
+ font-weight: bolder;
+}
+
+.title {
+ display:inline-block;
+ margin: 1em auto;
+ padding: 0.5em;
+ font-weight: bolder;
+ background-color: #92cb97;
 }
 
 @media screen and (max-width: 992px) {

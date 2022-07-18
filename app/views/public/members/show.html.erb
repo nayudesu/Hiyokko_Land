@@ -1,43 +1,30 @@
-<div>
-<h1>マイページ</h1>
-<h5>プロフィール画像</h5>
-  <% if @member.profile_image.attached? %>
-    <%= profile_image_tag member.get_profile_image(200,200) %>
-  <% else %>
-    <%= image_tag 'no-image-icon', size: "100x100" %>
-  <% end %>
+<div class='container'>
+  <div class='mypage'>
+    <h1>マイページ</h1>
+    <div class='col-3'>
+      <h5>プロフィール画像</h5>
+        <% if @member.profile_image.attached? %>
+          <%= profile_image_tag member.get_profile_image(200,200) %>
+        <% else %>
+          <%= image_tag 'no-image-icon', size: "100x100" %>
+        <% end %>
+    </div>
+    <div class='col-7'>
+        <h4>ニックネーム</h4>
+          <%= @member.nickname %>
+        <h4>メールアドレス</h4>
+          <%= @member.email %>
+        <h4>自己紹介文</h4>
+          <%= @member.introduction %>
 
-  <h4>ニックネーム</h4>
-    <%= @member.nickname %>
-  <h4>メールアドレス</h4>
-    <%= @member.email %>
-  <h4>自己紹介文</h4>
-    <%= @member.introduction %>
-
-  <% if @member.nickname != "ゲスト" %>
-    <%= link_to '編集する', edit_member_path(@member) %>
-  <% end %>
-
-
-
+        <% if @member.nickname != "ゲスト" %>
+          <%= link_to '編集する', edit_member_path(@member) %>
+        <% end %>
+    </div>
+  </div>
 </div>
 
-<div>
-  <% @posts.each do |posts| %>
-  <h4>画像</h4>
-    <%= link_to post_path(posts) do %>
-      <% if posts.image.attached? %>
-        <%= image_tag posts.image, size: "50x50" %>
-      <% else %>
-        <%= image_tag 'no-image', size: "50x50" %>
-      <% end %>
-    <% end %>
-      <h4>ジャンル</h4>
-      <%= posts.genre.name %>
-
-    <h4>タイトル</h4>
-      <%= link_to post_path(posts) do %><%= posts.title %><% end %>
-  <% end %>
-
+<div class='row'>
+  <%= render 'public/posts/post', posts: @posts %>
 </div>
 
