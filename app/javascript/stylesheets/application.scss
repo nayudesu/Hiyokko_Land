@@ -13,6 +13,10 @@ body {
  font-family: "TsukuARdGothic-Regular";
 }
 
+footer {
+ margin: 20px;
+}
+
 header {
  width: 100%;
  heigth: 80px;
@@ -127,12 +131,13 @@ span{
 .mypage {
  margin: 2%;
  border: 1px dashed orange;
+ border-radius: 20px;
 }
 
 .log {
  padding: 20px;
  border: 1px solid　#ffffff;
- background-color: white;
+ background-color: floralwhite;;
  width: 50%;
  margin: 0 auto;
 }
