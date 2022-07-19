@@ -1,44 +1,46 @@
-<h1>投稿の詳細</h1>
-<div class='favorite'>
-  <%= render 'favorite', post: @post %>
-</div>
-<div>
-  <h6>プロフィール画像</h6>
-  <% if @member.profile_image.attached? %>
-    <%= image_tag @member.profile_image, size: "100x100" %>
-  <% else %>
-    <%= image_tag 'no-image-icon', size: "100x100" %>
-  <% end %>
+<div class='container'>
+  <div class='mypage'>
+    <div class='col-1'>
+        <%= render 'favorite', post: @post %>
+    </div>
+    <div class='col-1'>
+        <% if @member.profile_image.attached? %>
+          <%= image_tag @member.profile_image, size: "50x50" %>
+        <% else %>
+          <%= image_tag 'no-image-icon', size: "50x50" %>
+        <% end %>
+      <h6>
+        <%= @post.member.nickname %>さん
+      </h6>
+    </div>
+    <div class='col-3'>
+           <%= link_to post_path(@post) do %>
+            <% if @post.image.attached? %>
+              <%= image_tag @post.image, size: "200x200" %>
+            <% else %>
+              <%= image_tag 'no-image', size: "200x200" %>
+            <% end %>
+           <% end %>
+    </div>
+    <div class='col-7'>
+          ＃<%= @post.genre.name %>
+        <h6>投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></h6>
+        <h4 class='post-form'>
+          <%= @post.title %>
+        </h4>
+        <h4 class='post-form'>
+          <%= @post.body %>
+        </h4>
 
-  <h6>ユーザーネーム</h6>
-  <%= @post.member.nickname %>
-
-  <h4>画像</h4>
-   <%= link_to post_path(@post) do %>
-    <% if @post.image.attached? %>
-      <%= image_tag @post.image, size: "200x200" %>
-    <% else %>
-      <%= image_tag 'no-image', size: "200x200" %>
-    <% end %>
-   <% end %>
-  <h4>ジャンル</h4>
-    <%= @post.genre.name %>
-  <h4>投稿日<%= @post.created_at.strftime('%Y/%m/%d') %></h4>
-  <h4>タイトル</h4>
-    <%= @post.title %>
-  <h4>投稿本文</h4>
-    <%= @post.body %>
-
-  <% if @post.member == current_member %>
-   <%= link_to '編集する',  edit_post_path(@post) %>
-  <% end %>
-
-</div>
-
-<div class = 'post_comment'>
-  <%= render 'public/post_comments/post_comment', post: @post %>
-</div>
-
-<div class = 'comment'>
-  <%= render 'public/post_comments/comment', post: @post, post_comment: @post_comment %>
+        <% if @post.member == current_member %>
+         <%= link_to '編集する',  edit_post_path(@post), class: 'btn btn-green' %>
+        <% end %>
+    </div>
+  </div>
+  <div class ='post_comment'>
+    <%= render 'public/post_comments/post_comment', post: @post %>
+  </div>
+  <div class ='comment'>
+    <%= render 'public/post_comments/comment', post: @post, post_comment: @post_comment %>
+  </div>
 </div>

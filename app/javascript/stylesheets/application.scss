@@ -59,6 +59,7 @@ p{
 
 th {
  padding: 1rem;
+ font-size: 1.2rem;
 }
 
 td {
@@ -94,8 +95,23 @@ span{
 }
 
 .btn {
- background-color: orange;
  margin: 0 0.5rem;
+ border-radius: 20px;
+}
+
+.btn-orange {
+ background-color: orange;
+}
+
+.btn-green {
+ background-color: #32cd32;
+ color: white;
+ margin: 1rem;
+}
+
+.btn-red {
+ background-color: red;
+ color: white;
 }
 
 .top{
@@ -106,6 +122,11 @@ span{
 .about {
  padding: 30px;
  font-size: 2.5vmin;
+}
+
+.mypage {
+ margin: 2%;
+ border: 1px dashed orange;
 }
 
 .log {
@@ -189,6 +210,25 @@ span{
  font-weight: bolder;
  background-color: #92cb97;
 }
+
+.name-form {
+ width: 50%;
+ background-color: #dddddd;
+ border-radius: 20px;
+}
+
+.post-form {
+ width: 100%;
+ background-color: beige;
+ border-radius: 5px;
+}
+
+.comment {
+ width: 100%;
+ padding: 10px;
+ border-radius: 5px;
+}
+
 
 @media screen and (max-width: 992px) {
 .logo { display: block; }
