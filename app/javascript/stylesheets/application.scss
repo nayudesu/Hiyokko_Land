@@ -141,6 +141,7 @@ span{
  margin: 2%;
  border: 1px dashed orange;
  border-radius: 20px;
+ background-color: white;
 }
 
 .log {
@@ -219,6 +220,18 @@ span{
  width: 30rem;
 }
 
+.member-body {
+ width: 25rem;
+}
+
+.profile-image {
+ height: 200px;
+ width: 200px;
+}
+
+.comment-form {
+ width: 50rem;
+}
 .post-btn {
  width: 50%;
  background-color: #f69679;
@@ -241,6 +254,7 @@ span{
 
 .name-form {
  width: 50%;
+ margin: 3px 2px;
  background-color: #dddddd;
  border-radius: 20px;
 }

@@ -1,33 +1,37 @@
 <div class='container'>
   <div class='mypage'>
-    <h1 class='title'>マイページ</h1>
-    <div class='col-3'>
-      <h5>プロフィール画像</h5>
-        <% if @member.profile_image.attached? %>
-          <%= profile_image_tag member.get_profile_image(200,200) %>
-        <% else %>
-          <%= image_tag 'no-image-icon', size: "100x100" %>
-        <% end %>
-    </div>
-    <div class='col-7'>
-      <table>
-        <tr>
-          <th><i class="far fa-smile"></i>ニックネーム</th>
-          <td class='name-form'><%= @member.nickname %></td>
-        </tr>
-        <tr>
-          <th><i class="far fa-envelope"></i>メールアドレス</th>
-          <td class='name-form'><%= @member.email %></td>
-        </tr>
-        <tr>
-          <th><i class="far fa-comment-dots"></i>自己紹介文</th>
-          <td class='name-form'><%= @member.introduction %></td>
-        </tr>
-      </table>
-      <div>
-        <% if @member.nickname != "ゲスト" %>
-          <%= link_to '編集する', edit_member_path(@member), class: 'btn btn-green' %>
-        <% end %>
+    <div class='row title'>マイページ</div>
+    <div class='row'>
+      <div class='col-4 col-sm-12'>
+        <h5>プロフィール画像</h5>
+          <div class="profile-image">
+            <% if @member.profile_image.attached? %>
+              <%= profile_image_tag member.get_profile_image(200,200) %>
+            <% else %>
+              <%= image_tag 'no-image-icon', size: "200x200" %>
+            <% end %>
+          </div>
+      </div>
+      <div class='col-8 col-sm-12'>
+        <table>
+          <tr>
+            <th><i class="far fa-smile"></i>ニックネーム</th>
+            <td><div class="bg-secondary rounded-pill py-2"><%= @member.nickname %></div></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-envelope"></i>メールアドレス</th>
+            <td class='name-form'><%= @member.email %></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-comment-dots"></i>自己紹介文</th>
+            <td class='name-form'><%= @member.introduction %></td>
+          </tr>
+        </table>
+        <div>
+          <% if @member.nickname != "ゲスト" %>
+            <%= link_to '編集する', edit_member_path(@member), class: 'btn btn-green' %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
