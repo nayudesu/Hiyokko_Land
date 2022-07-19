@@ -1,31 +1,41 @@
-<h1>ユーザーページ</h1>
-
-<h5>プロフィール画像</h5>
-  <% if @member.profile_image.attached? %>
-    <%= image_tag @member.image, size: "100x100" %>
-  <% else %>
-    <%= image_tag 'no-image-icon', size: "100x100" %>
-  <% end %>
-
-<h4>ニックネーム</h4>
-  <%= @member.nickname %>
-<h4>メールアドレス</h4>
-  <%= @member.email %>
-<h4>自己紹介文</h4>
-  <%= @member.introduction %>
-<h4>ユーザーステータス</h4>
-  <% if @member.is_deleted == false%>
-    有効
-  <% else %>
-    退会
-  <% end %>
-
-
-<%= link_to '編集する', edit_admin_member_path(@member) %>
+<div class='container'>
+  <div class='mypage'>
+    <h1 class='title'>
+      ユーザーページ
+    </h1>
+    <div class='col-3'>
+      <h5>プロフィール画像</h5>
+        <% if @member.profile_image.attached? %>
+          <%= image_tag @member.image, size: "100x100" %>
+        <% else %>
+          <%= image_tag 'no-image-icon', size: "100x100" %>
+        <% end %>
+    </div>
+    <div class="col-7">
+      <table>
+        <tr>
+          <th><i class="far fa-smile"></i>ニックネーム</th>
+          <td><%= @member.nickname %></td>
+        </tr>
+        <tr>
+          <th><i class="far fa-envelope"></i>メールアドレス</th>
+          <td><%= @member.email %></td>
+        </tr>
+        <tr>
+          <th><i class="far fa-comment-dots"></i>自己紹介文</th>
+          <td><%= @member.introduction %></td>
+        </tr>
+        <tr>
+          <th>ユーザーステータス</th>
+          <td>
+              <% if @member.is_deleted == false%>
+                有効
+              <% else %>
+                退会
+              <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  <%= link_to '編集する', edit_admin_member_path(@member), class: 'btn btn-green' %>
 </div>
-
-<div>
-  <%= link_to '投稿リストを見る', admin_posts_path %>
-  その人のみの投稿にする！
-</div>
-

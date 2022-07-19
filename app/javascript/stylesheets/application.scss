@@ -74,6 +74,10 @@ img {
  width: 100%;
 }
 
+h1 {
+ font-size: 3rem;
+}
+
 .logo {
  padding: 20px;
  font-family: "TsukuARdGothic-Regular";
@@ -252,6 +256,27 @@ span{
  border-radius: 5px;
 }
 
+.members {
+ margin: 1rem;
+ background-color: #e6f0f0;
+ border-radius: 5px;
+ width: 50%;
+}
+
+.genre {
+ margin: 2%;
+ padding: 2%;
+ border: 3px dashed #449419;
+ background-color: white;
+}
+
+
+.genres {
+ margin: 1rem;
+ background-color: lemonchiffon;
+ border-radius: 5px;
+ width: 50%;
+}
 
 @media screen and (max-width: 992px) {
 .logo { display: block; }
