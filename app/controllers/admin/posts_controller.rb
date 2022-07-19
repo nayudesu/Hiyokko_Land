@@ -10,6 +10,7 @@ class Admin::PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @genres = Genre.all
   end
 
   def edit
@@ -27,6 +28,11 @@ class Admin::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to admin_posts_path
+  end
+
+  def search
+    @posts = Post.search(params[:genre_id])
+    @genre = Genre.find(params[:genre_id])
   end
 
   private

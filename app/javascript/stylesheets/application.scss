@@ -118,6 +118,10 @@ span{
  color: white;
 }
 
+.btn-bule {
+ background-color: darkturquoise;
+}
+
 .top{
  padding: 30px;
  text-align: center;
@@ -163,11 +167,25 @@ span{
  border-radius: 20px;
 }
 
+.admin-sign {
+ padding: 0 0 10px 0;
+ margin: 70px auto;
+ background-color: #f6efdb;
+ width: 50%;
+ border: 2px solid #00aaff;
+}
+
 .sign-top {
  padding: 10px;
  background-color: orange;
  font-weight: bolder;
  border-radius: 20px 20px 0 0;
+}
+
+.admin-top {
+ padding: 10px;
+ background-color: #00aaff;
+ font-weight: bolder;
 }
 
 .field {
