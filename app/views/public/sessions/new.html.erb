@@ -24,8 +24,10 @@
     <%= f.submit "ログイン", class: 'btn btn-success font-weight-bold' %>
   </div>
 <% end %>
-  <div>
+  <div class="btn btn-bule font-weight-bold">
     <%= link_to members_guest_sign_in_path, method: :post do %>ゲストログイン<% end %>
   </div>
-<%= render "public/shared/links" %>
+  <div>
+    <%= render "public/shared/links" %>
+  </div>
 </div>
