@@ -14,13 +14,22 @@ body {
 }
 
 footer {
- margin: 20px;
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ margin-top: 20px;
+ background-color: #ffffff;
 }
 
 header {
  width: 100%;
  heigth: 80px;
  background-color: #ffffff;
+}
+
+.back {
+ heigth: 100%;
+ width: 100%;
 }
 
 .logo-mark {
@@ -139,7 +148,6 @@ span{
 
 .mypage {
  margin: 2%;
- border: 1px dashed orange;
  border-radius: 20px;
  background-color: white;
 }
@@ -150,6 +158,14 @@ span{
  background-color: floralwhite;;
  width: 50%;
  margin: 0 auto;
+}
+
+.post-back{
+ padding: 0;
+ margin: auto;
+ border: 1px solid #fff;
+ background-color: #fff8cf;
+ border-radius: 20px;
 }
 
 .posts {
@@ -237,12 +253,12 @@ span{
  background-color: #f69679;
 }
 
-.search {
- flex-direction: column;
- padding: 0.5rem;
- text-align: left;
- font-weight: bolder;
-}
+// .search {
+//  flex-direction: column;
+//  padding: 0.5rem;
+//  text-align: left;
+//  font-weight: bolder;
+// }
 
 .title {
  display:inline-block;
@@ -252,12 +268,12 @@ span{
  background-color: #92cb97;
 }
 
-.name-form {
- width: 50%;
- margin: 3px 2px;
- background-color: #dddddd;
- border-radius: 20px;
-}
+// .name-form {
+//  width: 50%;
+//  margin: 3px 2px;
+//  background-color: #dddddd;
+//  border-radius: 20px;
+// }
 
 .post-form {
  width: 100%;

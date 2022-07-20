@@ -1,22 +1,24 @@
-<div class='top'>
-  <div class='container'>
-    <div class='search'>
-      <div class='title'>
+<div class="back">
+  <div class='container post-back'>
+      <div class='post-top'>
         <h3>＜みんなの投稿＞</h3>
       </div>
-      <div>
-        <%= link_to '新着順', posts_path(latest: "true") %>
-        |<%= link_to '古い投稿順', posts_path(old: "true") %>
-        |<%= link_to '人気順', posts_path(favorite_count: "true") %>
-       </div>
-        <h6>
-        ジャンル検索
-        <%= form_with url: genre_search_path, method: :get do |f| %>
-          <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --") %>
-          <%= f.submit '検索' %>
-        <% end %>
-      </h6>
-
+      <div class='row d-flex p-3'>
+        <div class="col-md-4 offset-md-1 col-sm-12">
+          <span>
+            <%= link_to '新着順', posts_path(latest: "true") %>
+            |<%= link_to '古い投稿順', posts_path(old: "true") %>
+            |<%= link_to '人気順', posts_path(favorite_count: "true") %>
+          </span>
+        </div>
+        <div class='col-md-2 col-sm-12'>ジャンル検索</div>
+        <div class='col-md-4 col-sm-12'>
+          <%= form_with url: genre_search_path, method: :get do |f| %>
+            <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --") %>
+            <%= f.submit '検索', class: 'rounded-pill bg-success text-white border border-success' %>
+          <% end %>
+        </div>
+        <div class='col-md-1'></div>
       </div>
     <div class='row'>
       <div class='col-10'>

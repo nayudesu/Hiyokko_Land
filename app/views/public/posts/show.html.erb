@@ -1,51 +1,53 @@
-<div class='container top'>
-  <div class='row mypage'>
-    <div>
-      <div class="col-4 d-flex">
-        <div>
-          <%= render 'favorite', post: @post %>
-        </div>
-        <div>
-          <% if @member.profile_image.attached? %>
-            <%= image_tag @member.profile_image, size: "50x50" %>
-          <% else %>
-            <%= image_tag 'no-image-icon', size: "50x50" %>
-          <% end %>
+<div class="back">
+   <div class='container post-back'>
+    <div class='row mypage'>
+       <div>
+        <div class="col-4 d-flex">
           <div>
-            <%= @post.member.nickname %>さん
+            <%= render 'favorite', post: @post %>
+          </div>
+          <div>
+            <% if @member.profile_image.attached? %>
+              <%= image_tag @member.profile_image, size: "50x50" %>
+            <% else %>
+              <%= image_tag 'no-image-icon', size: "50x50" %>
+            <% end %>
+            <div>
+              <%= @post.member.nickname %>さん
+            </div>
           </div>
         </div>
+        <div>
+           <%= link_to post_path(@post) do %>
+            <% if @post.image.attached? %>
+              <%= image_tag @post.image, size: "200x200" %>
+            <% else %>
+              <%= image_tag 'no-image', size: "200x200" %>
+            <% end %>
+           <% end %>
+        </div>
       </div>
-      <div>
-         <%= link_to post_path(@post) do %>
-          <% if @post.image.attached? %>
-            <%= image_tag @post.image, size: "200x200" %>
-          <% else %>
-            <%= image_tag 'no-image', size: "200x200" %>
+  
+      <div class='col-8'>
+            ＃<%= @post.genre.name %>
+          <h6>投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></h6>
+          <h4 class='post-form'>
+            <%= @post.title %>
+          </h4>
+          <h4 class='post-form'>
+            <%= @post.body %>
+          </h4>
+  
+          <% if @post.member == current_member %>
+           <%= link_to '編集する',  edit_post_path(@post), class: 'btn btn-green' %>
           <% end %>
-         <% end %>
       </div>
     </div>
-    
-    <div class='col-8'>
-          ＃<%= @post.genre.name %>
-        <h6>投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></h6>
-        <h4 class='post-form'>
-          <%= @post.title %>
-        </h4>
-        <h4 class='post-form'>
-          <%= @post.body %>
-        </h4>
-
-        <% if @post.member == current_member %>
-         <%= link_to '編集する',  edit_post_path(@post), class: 'btn btn-green' %>
-        <% end %>
+    <div class ='post_comment'>
+      <%= render 'public/post_comments/post_comment', post: @post %>
     </div>
-  </div>
-  <div class ='post_comment'>
-    <%= render 'public/post_comments/post_comment', post: @post %>
-  </div>
-  <div class ='comment'>
-    <%= render 'public/post_comments/comment', post: @post, post_comment: @post_comment %>
+    <div class ='comment'>
+      <%= render 'public/post_comments/comment', post: @post, post_comment: @post_comment %>
+    </div>
   </div>
 </div>

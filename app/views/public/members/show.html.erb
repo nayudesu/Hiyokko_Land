@@ -1,10 +1,11 @@
 <div class='container'>
-  <div class='mypage'>
-    <div class='row title'>マイページ</div>
+  <div class='mypage mb-3'>
+    <div class='sign-top'>
+      <h3>マイページ</h3>
+    </div>
     <div class='row'>
-      <div class='col-4 col-sm-12'>
-        <h5>プロフィール画像</h5>
-          <div class="profile-image">
+      <div class='col-md-3 offset-md-2 col-sm-12 d-flex justify-content-around'>
+          <div class='profile-image'>
             <% if @member.profile_image.attached? %>
               <%= profile_image_tag member.get_profile_image(200,200) %>
             <% else %>
@@ -12,26 +13,28 @@
             <% end %>
           </div>
       </div>
-      <div class='col-8 col-sm-12'>
+      <div class='col-md-7 col-sm-12 d-flex justify-content-around'>
         <table>
           <tr>
             <th><i class="far fa-smile"></i>ニックネーム</th>
-            <td><div class="bg-secondary rounded-pill py-2"><%= @member.nickname %></div></td>
+            <td><div class='bg-light rounded-pill py-2'><%= @member.nickname %></div></td>
           </tr>
           <tr>
             <th><i class="far fa-envelope"></i>メールアドレス</th>
-            <td class='name-form'><%= @member.email %></td>
+            <td><div class='bg-light rounded-pill py-2'><%= @member.email %></td>
           </tr>
           <tr>
             <th><i class="far fa-comment-dots"></i>自己紹介文</th>
-            <td class='name-form'><%= @member.introduction %></td>
+            <td><div class='bg-light rounded-pill py-2'><%= @member.introduction %></td>
           </tr>
-        </table>
-        <div>
-          <% if @member.nickname != "ゲスト" %>
-            <%= link_to '編集する', edit_member_path(@member), class: 'btn btn-green' %>
-          <% end %>
-        </div>
+          <tr>
+            <th>
+              <% if @member.nickname != "ゲスト" %>
+                <%= link_to '編集する', edit_member_path(@member), class: 'btn btn-green' %>
+              <% end %>
+            </th>
+          </tr>
+         </table>
       </div>
     </div>
   </div>
