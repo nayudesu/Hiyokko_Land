@@ -5,7 +5,7 @@
         新規投稿
       </div>
       <div class='new'>
-          <%= form_with model:@post, url: posts_path do |f| %>
+        <%= form_with model:@post, url: posts_path do |f| %>
           <table>
             <tr>
               <th>
@@ -40,9 +40,9 @@
               </td>
             </tr>
           </table>
-      <center><%= f.submit '投稿する', class: 'btn post-btn' %></center>
+        <center><%= f.submit '投稿する', class: 'btn post-btn' %></center>
+        <% end %>
       </div>
     </div>
-      <% end %>
   </div>
 </div>

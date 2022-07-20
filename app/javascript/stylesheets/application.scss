@@ -14,7 +14,6 @@ body {
 }
 
 footer {
- position: absolute;
  bottom: 0;
  width: 100%;
  margin-top: 20px;
@@ -163,10 +162,18 @@ span{
 .post-back{
  padding: 0;
  margin: auto;
- border: 1px solid #fff;
+ border: 2px solid #ffcc00;
  background-color: #fff8cf;
  border-radius: 20px;
 }
+
+// .favo-back {
+//  padding: 0;
+//  margin: auto;
+//  border: 2px solid #dcc8dc;
+//  background-color: #e1c0b6;
+//  border-radius: 20px;
+// }
 
 .posts {
  display: flex;
@@ -277,14 +284,15 @@ span{
 
 .post-form {
  width: 100%;
+ margin: 10px;
  background-color: beige;
  border-radius: 5px;
 }
 
-.comment {
- width: 100%;
- padding: 10px;
- border-radius: 5px;
+.post_comments {
+ margin-top: 1px;
+ margin-bottom: 10px;
+ display: inline-block;
 }
 
 .members {
