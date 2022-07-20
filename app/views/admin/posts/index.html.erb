@@ -1,17 +1,17 @@
-<div class='top'>
+<div class='admin-back'>
   <div class='container'>
     <div class="search">
       <div class='title'>
         <h3>ユーザーの投稿一覧</h3>
       </div>
-      <div>
-        <h6>
-          ジャンル検索
+      <div class='row d-flex p-3'>
+        <div>ジャンル検索</div>
+        <div>
           <%= form_with url: genre_search_path, method: :get do |f| %>
             <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --") %>
-            <%= f.submit '検索' %>
+            <%= f.submit '検索', class: 'rounded-pill bg-success text-white border border-success' %>
           <% end %>
-        </h6>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -21,5 +21,5 @@
         </div>
       </div>
     </div>
- </div>
+  </div>
 </div>

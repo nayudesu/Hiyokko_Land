@@ -1,13 +1,15 @@
 <div class="post_comments">
   <% post.post_comments.each do |post_comment| %>
+  <div>
     <span>
       <%= post_comment.member.nickname %>：
       <%= post_comment.comment %>
     </span>
-    <div class='bg-danger rounded'>
+    <span class='bg-danger rounded'>
       <% if post_comment.member == current_member %>
         <%= link_to '削除', post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"}, remote: true, class: 'text-white' %>
       <% end %>
-    </div>
+    </span>
+  </div>
   <% end %>
 </div>

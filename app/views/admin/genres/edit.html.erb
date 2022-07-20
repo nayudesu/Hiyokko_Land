@@ -1,10 +1,10 @@
-<div class="col-7 genre">
-  <h1>＜ジャンル編集＞</h1>
-  <%= form_with model: @genre, url: admin_genre_path(@genre), method: :pacth do |f| %>
-    <%= f.text_field :name %>
-    <p>
+  <div class="genre">
+    <h3>＜ジャンル編集＞</h3>
+    <%= form_with model: @genre, url: admin_genre_path(@genre), method: :pacth do |f| %>
+      <%= f.text_field :name %>
+      <p>
       <%= f.submit '編集', class: 'btn btn-green' %>
       <%= link_to '削除', admin_genre_path(@genre), method: :delete, class: 'btn btn-red' %>
-    </p>
-  <% end %>
-</div>
+      </p>
+    <% end %>
+  </div>

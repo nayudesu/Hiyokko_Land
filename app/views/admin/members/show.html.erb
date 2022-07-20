@@ -1,41 +1,45 @@
 <div class='container'>
-  <div class='mypage'>
-    <h1 class='title'>
-      ユーザーページ
-    </h1>
-    <div class='col-3'>
-      <h5>プロフィール画像</h5>
-        <% if @member.profile_image.attached? %>
-          <%= image_tag @member.image, size: "100x100" %>
-        <% else %>
-          <%= image_tag 'no-image-icon', size: "100x100" %>
-        <% end %>
+  <div class='mypage mb-3'>
+    <div class='sign-top'>
+      <h3>ユーザーページ</h3>
     </div>
-    <div class="col-7">
-      <table>
-        <tr>
-          <th><i class="far fa-smile"></i>ニックネーム</th>
-          <td><%= @member.nickname %></td>
-        </tr>
-        <tr>
-          <th><i class="far fa-envelope"></i>メールアドレス</th>
-          <td><%= @member.email %></td>
-        </tr>
-        <tr>
-          <th><i class="far fa-comment-dots"></i>自己紹介文</th>
-          <td><%= @member.introduction %></td>
-        </tr>
-        <tr>
-          <th>ユーザーステータス</th>
-          <td>
-              <% if @member.is_deleted == false%>
-                有効
-              <% else %>
-                退会
-              <% end %>
-          </td>
-        </tr>
-      </table>
+    <div class="row">
+      <div class='col-md-3 offset-md-2 col-sm-12 d-flex justify-content-around'>
+        <div class='profile-image'>
+          <% if @member.profile_image.attached? %>
+            <%= image_tag @member.image, size: "200x200" %>
+          <% else %>
+            <%= image_tag 'no-image-icon', size: "200x200" %>
+          <% end %>
+        </div>
+      </div>
+      <div class='col-md-7 col-sm-12 d-flex justify-content-around'>
+        <table>
+          <tr>
+            <th><i class="far fa-smile"></i>ニックネーム</th>
+            <td><div class='bg-light rounded-pill py-2'><%= @member.nickname %></div></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-envelope"></i>メールアドレス</th>
+            <td><div class='bg-light rounded-pill py-2'><%= @member.email %></div></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-comment-dots"></i>自己紹介文</th>
+            <td><div class='bg-light rounded-pill py-2'><%= @member.introduction %></div></td>
+          </tr>
+          <tr>
+            <th>ユーザーステータス</th>
+            <td>
+                <% if @member.is_deleted == false%>
+                  有効
+                <% else %>
+                  退会
+                <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   <%= link_to '編集する', edit_admin_member_path(@member), class: 'btn btn-green' %>
+  </div>
 </div>

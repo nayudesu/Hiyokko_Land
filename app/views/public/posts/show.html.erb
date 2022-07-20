@@ -1,7 +1,8 @@
 <div class="back">
   <div class='new'>
     <div class='container post-back'>
-      <div class='row mypage d-flex align-items-center'>
+      <div class="mypage">
+      <div class='row d-flex align-items-center'>
          <div>
           <div class="col-md-4 col-sm-12 d-flex">
             <div>
@@ -39,7 +40,8 @@
             <%= @post.body %>
           </div>
         </div>
-        <div class='align-items-center'>
+      </div>
+        <div class='text-center'>
           <% if @post.member == current_member %>
             <%= link_to '編集する',  edit_post_path(@post), class: 'btn btn-green' %>
           <% end %>
