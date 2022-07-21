@@ -1,7 +1,7 @@
 <div class="back">
   <div class='new'>
     <div class='container post-back'>
-      <div class="mypage">
+      <div class="mypage p-3">
       <div class='row d-flex align-items-center'>
          <div>
           <div class="col-md-4 col-sm-12 d-flex">
@@ -47,10 +47,10 @@
           <% end %>
         </div>
       </div>
-      <div class ='comment'>
+      <div class ='row comment'>
         <%= render 'public/post_comments/comment', post: @post, post_comment: @post_comment %>
       </div>
-      <div class ='post_comment '>
+      <div class ='post_comment'>
         <%= render 'public/post_comments/post_comment', post: @post %>
       </div>
     </div>
