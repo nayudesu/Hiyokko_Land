@@ -11,10 +11,16 @@
   </head>
 
   <body>
-    <header>
-     <%= render 'layouts/header' %>
-    </header>
-    <%= yield %>
+    <% if admin_signed_in? %>
+    <div class="admin_wrapper">
+    <% else %>
+    <div class="member_wrapper">
+    <% end %>
+      <header>
+       <%= render 'layouts/header' %>
+      </header>
+      <%= yield %>
       <footer><center>ひよっこランド</center></footer>
+    </div>
   </body>
 </html>

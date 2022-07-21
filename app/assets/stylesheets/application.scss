@@ -13,13 +13,25 @@
  *= require_tree .
  *= require_self
  */
-body {
+html,
+body,
+.admin_wapper,
+.member_wrapper {
+ height: 100%;
+}
+
+.member_wrapper {
  background-image: image-url('toys.webp');
  background-size: 100%;
  background-repeat: no-repeat;
  background-size: cover;
  background-attachment: fixed;
- height: 100%;
+ min-height: 100%;
+}
+
+.admin_wapper {
+ background-color: antiquewhite;
+ min-height: 100%;
 }
 
 .admin-back {

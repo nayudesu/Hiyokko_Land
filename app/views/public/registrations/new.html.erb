@@ -1,33 +1,36 @@
-<div class='sign'>
-  <div class='sign-top'>
-    <h3>新規会員登録</h3>
-  </div>
-  <%= form_with model: @member, url: member_registration_path do |f| %>
+<div class='container sign'>
+    <div class='sign-top'>
+      <h3>新規会員登録</h3>
+    </div>
+    <%= form_with model: @member, url: member_registration_path do |f| %>
 
-<%= render "public/shared/error_messages", resource: resource %>
+    <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.text_field :nickname, placeholder: "ニックネーム", size: 30 %>
-  </div>
+    <div class="row form">
+      <div class="field col-md-8 offset-md-2 col-sm-12">
+        <%= f.text_field :nickname, placeholder: "ニックネーム"%>
+      </div>
 
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",size: 30  %>
-  </div>
+      <div class="field col-md-8 offset-md-2 col-sm-12">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+      </div>
 
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード６文字以上", size: 30  %>
-  </div>
+      <div class="field col-md-8 offset-md-2 col-sm-12">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード６文字以上" %>
+      </div>
 
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（２回目）", size: 30  %>
-  </div>
+      <div class="field col-md-8 offset-md-2 col-sm-12">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（２回目）" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "新規登録", class: 'btn btn-success font-weight-bold' %>
-  </div>
-  <% end %>
+      <div class="actions">
+        <%= f.submit "新規登録", class: 'btn btn-success font-weight-bold' %>
+      </div>
+    </div>
+    <% end %>
 
-　<div class="actions">
-    すでにアカウントをお持ちの方は<%= render "public/shared/links" %>
+  　<div class="actions">
+      すでにアカウントをお持ちの方は<%= render "public/shared/links" %>
+    </div>
   </div>
 </div>

@@ -9,12 +9,13 @@
 
 body {
  text-align: center;
- background-color: #fffac2;
+ background-color: antiquewhite;
  font-family: "TsukuARdGothic-Regular";
  min-height: 100%;
 }
 
 footer {
+ position: absolute;
  bottom: 0;
  width: 100%;
  background-color: #ffffff;
@@ -188,6 +189,10 @@ span{
  border-radius: 20px;
 }
 
+.row.form input {
+  width: 80%;
+}
+
 .admin {
  padding: 10px;
  margin: 10px auto;
@@ -311,4 +316,9 @@ header ul {
  gap: 12px;
  width: 100%;
 }
+
+ .sign {
+  width: 80%;
+ }
 }
+
