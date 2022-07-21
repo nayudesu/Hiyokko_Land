@@ -15,10 +15,8 @@ body {
 }
 
 footer {
- // position: absolute;
  bottom: 0;
  width: 100%;
- // margin-top: 20px;
  background-color: #ffffff;
 }
 
@@ -72,7 +70,7 @@ p{
 }
 
 th {
- padding: 1rem;
+ padding: 1px 1rem;
  font-size: 1.2rem;
 }
 
@@ -261,6 +259,7 @@ span{
 }
 
 .title {
+ display: inline-block;
  margin: auto;
  margin-top: 1rem;
  padding: 0.5em;
@@ -295,12 +294,10 @@ span{
  background-color: white;
 }
 
-
 .genres {
- margin: 1rem;
+ margin: 5px;
  background-color: lemonchiffon;
  border-radius: 5px;
- // width: 50%;
 }
 
 @media screen and (max-width: 992px) {
