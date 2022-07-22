@@ -5,7 +5,7 @@ class Public::FavoritesController < ApplicationController
     @post = Post.find(params[:post_id])
     favorite = current_member.favorites.new(post_id: @post.id)
     favorite.save
-    
+
   end
 
   def destroy
@@ -19,7 +19,7 @@ class Public::FavoritesController < ApplicationController
     @member = Member.find(params[:id])
     favorites = Favorite.where(member_id: @member.id).pluck(:post_id)
     @posts = Post.where(id: favorites)
-    @post = Post.find(params[:id])
+    #@post = Post.find(params[:post_id])
   end
 
 end

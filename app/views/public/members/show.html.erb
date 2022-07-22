@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="text-center">
-      <% if @member.nickname != "ゲスト" %>
+      <% if @member.nickname != "ゲスト" && current_member == @member %>
         <%= link_to '編集する', edit_member_path(@member), class: 'btn btn-green' %>
       <% end %>
     </div>
