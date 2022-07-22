@@ -27,7 +27,7 @@ class Public::PostsController < ApplicationController
     elsif params[:favorite_count]
       @posts = Post.favorite_count
     else
-      @posts = Post.all
+      @posts = Post.page(params[:page]).per(3)
     end
   end
 
