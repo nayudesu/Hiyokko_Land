@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :genres
   end
 
+  scope module: :admin do
+    get 'genre_search' => 'posts#search'
+  end
 
   devise_for :members,controllers: {
   registrations: "public/registrations",

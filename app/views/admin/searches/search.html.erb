@@ -4,9 +4,9 @@
 　　　<h3 class='title'>＃<%= @keyword %>の検索結果</h3>
 
       <% if @range == 'ユーザー' %>
-        <%= render 'admin/members/member', members: @members %>
+        <%= render 'public/members/member', members: @members %>
       <% elsif @range == '投稿' %>
-        <%= render 'admin/posts/post', posts: @posts %>
+        <%= render 'public/posts/post', posts: @posts %>
       <% else %>
         検索結果が見つかりませんでした。
       <% end %>

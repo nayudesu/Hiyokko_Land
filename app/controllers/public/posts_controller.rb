@@ -18,8 +18,17 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
     @genres = Genre.all
+
+    if params[:latest]
+      @posts = Post.latest
+    elsif params[:old]
+      @posts = Post.old
+    elsif params[:favorite_count]
+      @posts = Post.favorite_count
+    else
+      @posts = Post.all
+    end
   end
 
   def show

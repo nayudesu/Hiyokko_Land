@@ -1,0 +1,11 @@
+<% members.each do |member| %>
+  <% if member.profile_image.attached? %>
+    <%= image_tag member.image, size: "100x100" %>
+  <% else %>
+    <%= image_tag 'no-image-icon', size: "100x100" %>
+  <% end %>
+  <%= link_to public_member_path(member) do %>
+    <%= member.nickname %>
+  <% end %>
+  <%= member.introduction %>
+<% end %>

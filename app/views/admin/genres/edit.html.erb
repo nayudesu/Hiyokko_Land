@@ -1,7 +1,7 @@
 <div class="admin-back">
   <div class="genre">
     <h3>＜ジャンル編集＞</h3>
-    <%= form_with model: @genre, url: admin_genre_path(@genre), method: :pacth do |f| %>
+    <%= form_with model: @genre, url: admin_genre_path(@genre), local: true do |f| %>
       <%= f.text_field :name %>
       <p>
       <%= f.submit '編集', class: 'btn btn-green' %>
