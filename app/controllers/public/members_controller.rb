@@ -10,6 +10,11 @@ class Public::MembersController < ApplicationController
 
   def edit
     @member = Member.find(params[:id])
+    if @member == current_member
+      render "edit"
+    else
+      redirect_to posts_path
+    end
   end
 
   def update

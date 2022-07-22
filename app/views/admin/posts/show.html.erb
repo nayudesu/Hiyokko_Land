@@ -1,36 +1,60 @@
-<h1>投稿の詳細</h1>
-<div>
-  <h6>プロフィール画像</h6>
-    <% if @member.profile_image.attached? %>
-      <%= image_tag @member.profile_image.image, size: "50x50" %>
-    <% else %>
-      <%= image_tag 'no-image-icon', size: "50x50" %>
-    <% end %>
+<div class="back">
+  <div class='new'>
+    <div class='container post-back'>
+      <div class="mypage p-3">
+      <div class='row d-flex align-items-center'>
+         <div>
+          <div class="col-md-4 col-sm-12 d-flex">
+            <div>
+              <% if @member.profile_image.attached? %>
+                <%= image_tag @member.profile_image, size: "50x50" %>
+              <% else %>
+                <%= image_tag 'no-image-icon', size: "50x50" %>
+              <% end %>
+              <div>
+                <%= @post.member.nickname %>さん
+              </div>
+            </div>
+          </div>
+          <div class='pb-5 px-3'>
+             <%= link_to post_path(@post) do %>
+              <% if @post.image.attached? %>
+                <%= image_tag @post.image, size: "200x200" %>
+              <% else %>
+                <%= image_tag 'no-image', size: "200x200" %>
+              <% end %>
+             <% end %>
+          </div>
+        </div>
 
-  <h6>ユーザー名</h6>
-    <%= @member.nickname %>
-
-  <h4>画像</h4>
-      <% if @post.image.attached? %>
-        <%= image_tag @post.image, size: "200x200" %>
-      <% else %>
-        <%= image_tag 'no_image', size: "200x200" %>
-      <% end %>
-  <h4>ジャンル</h4>
-    <%= @post.genre.name %>
-  <h4>投稿日<%= @post.created_at.strftime('%Y/%m/%d') %></h4>
-  <h4>タイトル</h4>
-    <%= @post.title %>
-  <h4>投稿本文</h4>
-    <%= @post.body %>
-
-    <%= link_to '編集する', edit_admin_post_path(@post) %>
-</div>
-
-<div>
-  <% @post_comments.each do |post_comment| %>
-  <%= post_comment.member.nickname %>
-  <%= post_comment.comment %>
-  <%= link_to '削除する', admin_post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"} %>
-  <% end %>
+        <div class='col-md-8 col-sm-12'>
+          <div> ＃<%= @post.genre.name %></div>
+          <div>投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></div>
+          <h4 class='post-form'>
+            <%= @post.title %>
+          </h4>
+          <div class='post-form'>
+            <%= @post.body %>
+          </div>
+        </div>
+      </div>
+        <div class='text-center'>
+          <%= link_to '編集する', edit_admin_post_path(@post), class: 'btn btn-green' %>
+        </div>
+        <div class="post_comments">
+          <% @post_comments.each do |post_comment| %>
+    　  　  <div>
+           <span>
+              <%= post_comment.member.nickname %>
+              <%= post_comment.comment %>
+            </span>
+            <span class='bg-danger rounded'>
+              <%= link_to '削除する', admin_post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"} %>
+    　　　　    </span>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

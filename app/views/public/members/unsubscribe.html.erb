@@ -1,7 +1,9 @@
-<h1>本当に退会しますか？</h1>
-
-<h3>退会すると、マイページやこれまでの投稿やコメントが削除されます。</h3>
-<h3>退会する場合は、「退会する」を押してください。</h3>
-
-<%= link_to '退会しない', member_path(@member) %>
-<%= link_to '退会する', public_withdraw_path(@member), method: :patch %>
+<div class='container sign'>
+  <h3>本当に退会しますか？</h3>
+  <p>退会すると、マイページやこれまでの投稿やコメントが削除されます。</p>
+  <p>退会する場合は、「退会する」を押してください。</p>
+  <div>
+    <%= link_to '退会しない', member_path(@member), class: 'btn btn-bule' %>
+    <%= link_to '退会する', public_withdraw_path(@member), method: :patch, class: 'btn btn-red' %>
+  </div>
+</div>

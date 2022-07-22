@@ -41,7 +41,7 @@
           </table>
       <div>
         <%= f.submit '変更を保存する', class: 'btn btn-green' %>
-        <%= link_to '削除する', post_path(@post), method: :delete, class: 'btn btn-red'%>
+        <%= link_to '削除する', post_path(@post), method: :delete, class: 'btn btn-red', data: {confirm: "この投稿を削除しますか？"} %>
       </div>
     <% end %>
   </div>
