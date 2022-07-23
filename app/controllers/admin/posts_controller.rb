@@ -9,8 +9,18 @@ class Admin::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page]).per(3)
     @genres = Genre.all
+
+    if params[:latest]
+      @posts = Post.latest
+    elsif params[:old]
+      @posts = Post.old
+    elsif params[:favorite_count]
+      @posts = Post.includes(:favorites).sort {|a,b| b.favorites.size <=> a.favorites.size}
+    else
+      @posts = Post.all
+    end
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
   end
 
   def edit

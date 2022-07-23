@@ -25,10 +25,11 @@ class Public::PostsController < ApplicationController
     elsif params[:old]
       @posts = Post.old
     elsif params[:favorite_count]
-      @posts = Post.favorite_count
+      @posts = Post.includes(:favorites).sort {|a,b| b.favorites.size <=> a.favorites.size}
     else
-      @posts = Post.page(params[:page]).per(3)
+      @posts = Post.all
     end
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(4)
   end
 
   def show

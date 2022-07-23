@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when Member
-      posts_path
-      #member_path(current_member.id)
+      member_path(current_member.id)
     when Admin
       admin_root_path
     end
