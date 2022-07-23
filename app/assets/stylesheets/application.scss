@@ -22,11 +22,14 @@ body,
 
 .member_wrapper {
  background-image: image-url('toys.webp');
- background-size: 100%;
+ // background-size: 100%;
  background-repeat: no-repeat;
  background-size: cover;
  background-attachment: fixed;
+ overflow: scroll;
  min-height: 100%;
+ display: flex;
+ flex-direction: column;
 }
 
 .admin_wapper {
@@ -42,3 +45,5 @@ body,
  padding-bottom: 50px;
  height: 100%;
 }
+
+

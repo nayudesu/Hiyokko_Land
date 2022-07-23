@@ -1,4 +1,15 @@
-<h3>#<%= @genre.name %>の検索結果</h3>
-<div>
-    <%= render 'admin/posts/post', posts: @posts %>
+<div class="back">
+  <div class="new">
+    <div class='container post-back'>
+      <div class='title'>#<%= @genre.name %>の検索結果</div>
+      <div class='row'>
+        <div class='col-10'>
+          <div class='posts'>
+            <%= render 'admin/posts/post', posts: @posts %>
+          </div>
+        </div>
+        <%#= paginate @posts %>
+      </div>
+    </div>
+  </div>
 </div>

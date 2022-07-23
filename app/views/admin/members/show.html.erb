@@ -7,7 +7,7 @@
       <div class='col-md-3 offset-md-2 col-sm-12 d-flex justify-content-around'>
         <div class='profile-image'>
           <% if @member.profile_image.attached? %>
-            <%= image_tag @member.image, size: "200x200" %>
+            <%= image_tag @member.profile_image, size: "200x200" %>
           <% else %>
             <%= image_tag 'no-image-icon', size: "200x200" %>
           <% end %>
@@ -42,4 +42,8 @@
     </div>
   <%= link_to '編集する', edit_admin_member_path(@member), class: 'btn btn-green' %>
   </div>
+</div>
+
+<div class='row justify-content-center'>
+  <%= render 'admin/posts/post', posts: @posts %>
 </div>

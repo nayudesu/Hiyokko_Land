@@ -5,14 +5,14 @@
         <h2>ユーザーの一覧</h2>
       </div>
     </div>
-    <div class="row admin">
+    <div class="row admin" style='width: 100%;'>
       <% @members.each do |member| %>
       <div class='members'>
-        <table>
+        <table style='width: 100%;'>
           <tr>
             <td>
                 <% if member.profile_image.attached? %>
-                  <%= image_tag member.image, size: "50x50" %>
+                  <%= image_tag member.profile_image, size: "50x50" %>
                 <% else %>
                   <%= image_tag 'no-image-icon', size: "50x50" %>
                 <% end %>

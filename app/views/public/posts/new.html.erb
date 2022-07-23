@@ -6,7 +6,7 @@
       </div>
       <div class='new'>
         <%= form_with model:@post, url: posts_path do |f| %>
-          <table>
+          <table style='width: 100%;'>
             <tr>
               <th>
                 画像
@@ -28,7 +28,7 @@
                 タイトル
               </th>
               <td>
-                <%= f.text_field :title, class: 'post-body' %>
+                <%= f.text_field :title, class: 'col-12' %>
               </td>
             </tr>
             <tr>
@@ -36,7 +36,7 @@
                 投稿内容
               </th>
               <td>
-                <%= f.text_area :body, class: 'post-body', rows:10 %>
+                <%= f.text_area :body, class: 'col-12', rows:10 %>
               </td>
             </tr>
           </table>

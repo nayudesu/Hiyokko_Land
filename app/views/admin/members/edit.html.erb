@@ -1,12 +1,12 @@
 <div class='container'>
   <div class='row  justify-content-center'>
-    <div class="col-md-8 col-sm-12 sign">
+    <div class="col-md-8 sign">
       <div class='sign-top'>
         <h3>ユーザーページ編集</h3>
       </div>
       <div class="new"></div>
        <%= form_with model: @member, url: admin_member_path(@member) do |f| %>
-        <table>
+        <table style='width: 100%;'>
           <tr>
             <th>
                 プロフィール画像
@@ -20,7 +20,7 @@
               <%= f.label :ニックネーム %>
             </th>
             <td>
-              <%= f.text_field :nickname, class: 'member-body' %>
+              <%= f.text_field :nickname, class: 'col-12' %>
             </td>
           </tr>
           <tr>
@@ -28,7 +28,7 @@
               <%= f.label :メールアドレス %>
             </th>
             <td>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'member-body' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'col-12' %>
             </td>
           </tr>
           <tr>
@@ -36,14 +36,14 @@
               <%= f.label :自己紹介文 %>
             </th>
             <td>
-              <%= f.text_area :introduction, class: 'member-body' %>
+              <%= f.text_area :introduction, class: 'col-12' %>
             </td>
           </tr>
           <tr>
             <th>ユーザーステータス</th>
-            <td>
-              <%= f.radio_button :is_deleted, :true %>退会
-              <%= f.radio_button :is_deleted, :false %>有効
+            <td class='d-flex justify-content-around'>
+              <div><%= f.radio_button :is_deleted, :true %>退会</div>
+              <div><%= f.radio_button :is_deleted, :false %>有効</div>
             </td>
           </tr>
         </table>

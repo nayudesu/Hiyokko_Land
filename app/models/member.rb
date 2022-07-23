@@ -9,10 +9,10 @@ class Member < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   has_one_attached :profile_image
-  
-  validates :nickname, presence: true, length: { minimum: 2, maximum: 20 }
-  validates :introduction, length: { maximum: 200 }
-  
+
+  validates :nickname, presence: true, length: { minimum: 2, maximum: 15 }
+  validates :introduction, length: { maximum: 70 }
+
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no-image-icon.jpeg')

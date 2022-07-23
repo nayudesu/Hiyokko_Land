@@ -2,11 +2,11 @@
   <div class="genre">
     <h3>＜ジャンル編集＞</h3>
     <%= form_with model: @genre, url: admin_genre_path(@genre), local: true do |f| %>
-      <%= f.text_field :name %>
-      <p>
+      <%= f.text_field :name,class: 'col-md-6 col-sm-12' %>
+      <div>
       <%= f.submit '編集', class: 'btn btn-green' %>
       <%= link_to '削除', admin_genre_path(@genre), method: :delete, class: 'btn btn-red' %>
-      </p>
+      </div>
     <% end %>
   </div>
 </div>
