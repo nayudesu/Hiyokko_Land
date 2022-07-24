@@ -53,8 +53,8 @@
               <%= post_comment.member.nickname %>：
               <%= post_comment.comment %>
             </span>
-            <span class='bg-danger text-white rounded-pill p-1'>
-              <%= link_to '削除', admin_post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"} %>
+            <span class='bg-danger rounded'>
+              <%= link_to '削除', admin_post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"}, remote: true, class: 'text-white' %>
     　　　　    </span>
           </div>
           <% end %>
