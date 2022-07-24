@@ -12,8 +12,10 @@ class Public::PostsController < ApplicationController
     @post.member_id = current_member.id
     if @post.save
       redirect_to post_path(@post)
+      flash[:notice] = "投稿されました！"
     else
       render 'new'
+      flash[:notice] = "投稿に失敗しました。"
     end
   end
 
@@ -50,8 +52,13 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post)
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+      flash[:notice] = "編集が更新されました！"
+    else
+      render :edit
+      flash[:notice] = "更新に失敗しました。"
+    end
   end
 
   def destroy

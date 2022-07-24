@@ -17,8 +17,13 @@ class Admin::MembersController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
-    @member.update(member_params)
-    redirect_to admin_member_path(@member)
+    if @member.update(member_params)
+      redirect_to admin_member_path(@member)
+      flash[:notice] = "マイページの編集が完了しました。"
+    else
+      render :edit
+      flash[:notice] = "マイページの編集に失敗しました。"
+    end
   end
 
   def destory

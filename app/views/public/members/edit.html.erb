@@ -4,6 +4,7 @@
       <div class="sign-top">
         <h3>マイページ編集</h3>
       </div>
+      <%= flash[:notice] %>
       <div class="new">
         <%= form_with model: @member do |f| %>
         <table style='width: 100%;'>

@@ -13,21 +13,21 @@
       <li class='btn btn-orange'><%= link_to destroy_member_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
       <%= form_with url: search_path, method: :get do |f| %>
         <%= f.text_field :keyword %>
-        <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
+        <%= f.select :range, options_for_select([['ユーザ'],['投稿']]) %>
         <%= f.submit '検索' %>
       <% end %>
 
     </ul>
       <% elsif admin_signed_in? %>
     <ul>
-      <li class='btn btn-orange'><%= link_to admin_root_path do %><i class="fas fa-address-book"></i>ユーザー一覧<% end %></li>
+      <li class='btn btn-orange'><%= link_to admin_root_path do %><i class="fas fa-address-book"></i>ユーザ一覧<% end %></li>
       <li class='btn btn-orange'><%= link_to admin_posts_path do %><i class="fas fa-bars"></i>投稿一覧<% end %></li>
       <li class='btn btn-orange'><%= link_to admin_genres_path do %><i class="fas fa-bookmark"></i>ジャンル一覧<% end %></li>
       <li class='btn btn-orange'><%= link_to destroy_admin_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
       <div>
         <%= form_with url: search_path, method: :get do |f| %>
           <%= f.text_field :keyword %>
-          <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
+          <%= f.select :range, options_for_select([['ユーザ'],['投稿']]) %>
           <%= f.submit '検索' %>
         <% end %>
       </div>

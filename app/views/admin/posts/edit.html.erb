@@ -4,9 +4,10 @@
       <div class='post-top'>
         投稿編集ページ
       </div>
+      <%= flash[:notice] %>
     <div class='new'>
       <%= form_with model:@post, url: admin_post_path(@post) do |f| %>
-          <table>
+          <table style='width: 100%;'>
             <tr>
               <th>
                 画像
@@ -27,7 +28,7 @@
                 タイトル
               </th>
               <td>
-                <%= f.text_field :title, class: 'post-body' %>
+                <%= f.text_field :title, class: 'col-12' %>
               </td>
             </tr>
             <tr>
@@ -35,7 +36,7 @@
                 投稿内容
               </th>
               <td>
-                <%= f.text_area :body, class: 'post-body' %>
+                <%= f.text_area :body, class: 'col-12', rows:15 %>
               </td>
             </tr>
           </table>

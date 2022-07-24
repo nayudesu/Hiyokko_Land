@@ -12,6 +12,7 @@
           <%= f.submit '追加する', class: 'btn btn-green' %>
         <% end %>
     </div>
+    <%= flash[:notice] %>
     <div class='row'>
         <div class='admin'>
           <% @genres.each do |genre| %>

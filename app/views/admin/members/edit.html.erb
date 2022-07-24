@@ -4,6 +4,7 @@
       <div class='sign-top'>
         <h3>ユーザーページ編集</h3>
       </div>
+      <%= flash[:notice] %>
       <div class="new"></div>
        <%= form_with model: @member, url: admin_member_path(@member) do |f| %>
         <table style='width: 100%;'>

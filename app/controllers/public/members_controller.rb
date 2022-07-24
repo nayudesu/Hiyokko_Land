@@ -19,8 +19,13 @@ class Public::MembersController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
-    @member = @member.update(member_params)
-    redirect_to member_path(current_member.id)
+    if @member = @member.update(member_params)
+      redirect_to member_path(current_member.id)
+      flash[:notice] = "マイページが編集されました！"
+    else
+      render :edit
+      flash[:notice] = "更新に失敗しました。"
+    end
   end
 
   def unsubscribe

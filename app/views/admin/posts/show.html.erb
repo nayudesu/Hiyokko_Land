@@ -2,15 +2,18 @@
   <div class='new'>
     <div class='container post-back'>
       <div class="mypage p-3">
+      <%= flash[:notice] %>
       <div class='row d-flex align-items-center'>
          <div>
           <div class="col-md-4 col-sm-12 d-flex">
             <div>
-              <% if @member.profile_image.attached? %>
-                <%= image_tag @member.profile_image, size: "50x50" %>
-              <% else %>
-                <%= image_tag 'no-image-icon', size: "50x50" %>
-              <% end %>
+              <div>
+                <% if @member.profile_image.attached? %>
+                  <%= image_tag @member.profile_image, size: "50x50" %>
+                <% else %>
+                  <%= image_tag 'no-image-icon', size: "50x50" %>
+                <% end %>
+              </div>
               <div>
                 <%= @post.member.nickname %>さん
               </div>
@@ -41,11 +44,11 @@
         <div class='text-center'>
           <%= link_to '編集する', edit_admin_post_path(@post), class: 'btn btn-green' %>
         </div>
-        <div class="post_comments">
+        <div class="row post_comments">
           <% @post_comments.each do |post_comment| %>
     　  　  <div>
-           <span>
-              <%= post_comment.member.nickname %>
+            <span>
+              <%= post_comment.member.nickname %>：
               <%= post_comment.comment %>
             </span>
             <span class='bg-danger rounded'>

@@ -7,8 +7,8 @@ class Post < ApplicationRecord
 
   has_one_attached :image
 
-  validates :title, presence: true, length:{ maximum: 70 }
-  validates :body, presence: true, length:{ maximum: 800 }
+  validates :title, presence: true, length:{ maximum: 30 }
+  validates :body, presence: true, length:{ maximum: 405 }
 
   def get_image(width, height)
     unless image.attached?

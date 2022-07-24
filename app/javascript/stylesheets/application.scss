@@ -66,6 +66,14 @@ p{
  text-decoration: underline;
 }
 
+.table {
+ width: 100%;
+ margin-bottom: 1rem;
+ color: #212529;
+ line-height: 7;
+ text-align: left;
+}
+
 th {
  padding: 1px 1rem;
  font-size: 1.2rem;
@@ -77,6 +85,10 @@ td {
 
 img {
  width: 100%;
+ margin: 1rem auto;
+}
+
+.table img {
  margin: 1rem auto;
 }
 
@@ -103,7 +115,7 @@ h1 {
 }
 
 span{
- line-heigth: 2.5;
+ line-height: 2.5 !important;
  background-color: white;
  display: inline-block;
 }
