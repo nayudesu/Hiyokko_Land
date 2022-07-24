@@ -1,8 +1,11 @@
-    <%= form_with model: [Post,PostComment], url: post_post_comments_path(post.id), local: false do |f| %>
-    <div class="col-md-9 offset-md-1 col-sm-12">
-      <%= f.text_area :comment, class: 'comment-form', rows:3 , placeholder: "コメントをここに" %>
-    </div>
-    <div class="col-md-2 col-sm12">
-      <%= f.submit '送信する', class: 'btn btn-green' %>
-    </div>
-    <% end %>
+
+<%= form_with model: [Post,PostComment], url: post_post_comments_path(post.id), local: false do |f| %>
+<div class="row">
+  <div class="col-lg-8 col-xl-10 col-md-10 col-sm-10">
+  <%= f.text_area :comment,  placeholder: "コメントをここに" ,style:"width: 90%", rows:3 %>
+  </div>
+  <div class="col-lg-4 col-xl-2 col-md-2 col-sm-2">
+  <%= f.submit '送信する', class: 'btn btn-green' %>
+  </div>
+</div>
+<% end %>

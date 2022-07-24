@@ -88,10 +88,6 @@ img {
  margin: 1rem auto;
 }
 
-.table img {
- margin: 1rem auto;
-}
-
 h1 {
  font-size: 3rem;
 }
@@ -257,9 +253,6 @@ span{
  margin: 1rem;
 }
 
-.comment-form {
- width: 50rem;
-}
 .post-btn {
  width: 50%;
  background-color: #f69679;
@@ -294,7 +287,7 @@ span{
 }
 
 .genre {
- margin: 5% auto;
+ margin: 10px auto;
  padding: 2%;
  width: 50%;
  border: 3px dashed #449419;
@@ -305,6 +298,10 @@ span{
  margin: 5px;
  background-color: lemonchiffon;
  border-radius: 5px;
+}
+
+.hart {
+ color: #e54747;
 }
 
 @media screen and (max-width: 992px) {

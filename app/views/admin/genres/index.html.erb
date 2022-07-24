@@ -23,12 +23,13 @@
                     <%= genre.name %>
                   </td>
                   <td>
-                    <%= link_to '編集する', edit_admin_genre_path(genre), class: 'btn btn-green' %>
+                    <%= link_to '編集する', edit_admin_genre_path(genre), class: 'bg-success text-white rounded-pill p-1' %>
                   </td>
                 </tr>
               </table>
             </div>
           <% end %>
+          <%= paginate @genres %>
         </div>
     </div>
   </div>

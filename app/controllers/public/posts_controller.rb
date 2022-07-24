@@ -4,7 +4,7 @@ class Public::PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @genres = Genre.all
+   # @genres = Genre.all
   end
 
   def create
@@ -70,6 +70,7 @@ class Public::PostsController < ApplicationController
   def search
     @posts = Post.search(params[:genre_id])
     @genre = Genre.find(params[:genre_id])
+    @posts = @posts.page(params[:page]).per(4)
   end
 
   private

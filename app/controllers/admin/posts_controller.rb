@@ -20,7 +20,7 @@ class Admin::PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(4)
   end
 
   def edit

@@ -1,23 +1,25 @@
-<% members.each do |member| %>
-<div class='members'>
-  <table>
-    <tr>
-      <td>
-        <% if member.profile_image.attached? %>
-          <%= image_tag member.image, size: "100x100" %>
-        <% else %>
-          <%= image_tag 'no-image-icon', size: "100x100" %>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to member_path(member) do %>
-          <%= member.nickname %>
-        <% end %>
-      </td>
-      <td>
-        <%= member.introduction %>
-      </td>
-    </tr>
-  </table>
-  </div>
-<% end %>
+<div class="d-flex flex-column-reverse" style='width: 100%;'>
+  <% members.each do |member| %>
+    <div class='members'>
+      <table>
+        <tr>
+          <td>
+            <% if member.profile_image.attached? %>
+              <%= image_tag member.profile_image, size: "50x50" %>
+            <% else %>
+              <%= image_tag 'no-image-icon', size: "50x50" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to member_path(member) do %>
+              <%= member.nickname %>さん
+            <% end %>
+          </td>
+          <td>
+            自己紹介：<%= member.introduction %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+</div>

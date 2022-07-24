@@ -9,7 +9,7 @@ class Admin::GenresController < ApplicationController
   end
 
   def index
-    @genres = Genre.all
+    @genres = Genre.page(params[:page]).per(20)
     @genre = Genre.new
   end
 
@@ -25,6 +25,7 @@ class Admin::GenresController < ApplicationController
     else
       render :edit
       flash[:notice] = "ジャンルの編集に失敗しました。"
+    end
   end
 
   def destroy

@@ -2,11 +2,12 @@
   <div class="new">
     <div class='container post-back'>
 　　　<h3 class='title'>＃<%= @keyword %>の検索結果</h3>
-
-      <% if @range == 'ユーザー' %>
-        <%= render 'public/members/member', members: @members %>
+      <% if @range == 'ユーザ' %>
+        <%= render 'admin/members/member', members: @members %>
+        <%= paginate @members %>
       <% elsif @range == '投稿' %>
-        <%= render 'public/posts/post', posts: @posts %>
+        <%= render 'admin/posts/post', posts: @posts %>
+        <%= paginate @posts %>
       <% else %>
         検索結果が見つかりませんでした。
       <% end %>

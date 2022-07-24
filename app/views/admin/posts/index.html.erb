@@ -1,7 +1,7 @@
   <div class='container'>
     <div class="search">
       <div class='title'>
-        <h3>ユーザーの投稿一覧</h3>
+        <h3>ユーザの投稿一覧</h3>
       </div>
       <div class='row d-flex p-3'>
         <div class="col-md-4 offset-md-1 col-sm-12">
@@ -21,11 +21,11 @@
       </div>
     </div>
     <div class="row justify-content-around">
-      <div class="post-back col-12">
+      <div class="post-back mb-5 col-12">
         <div class="posts">
           <%= render 'post', posts: @posts %>
         </div>
-        <%= paginate @posts %>
+      <%= paginate @posts %>
       </div>
     </div>
   </div>
