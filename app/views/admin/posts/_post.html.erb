@@ -10,7 +10,7 @@
   </h4>
 　<!--画像-->
   <h4>
-    <%= link_to admin_post_path(posts) do %>
+    <%= link_to admin_post_path(post) do %>
       <% if post.image.attached? %>
         <%= image_tag post.get_image(300,300) %>
       <% else %>
