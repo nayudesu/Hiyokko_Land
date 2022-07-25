@@ -71,7 +71,7 @@ a{
 
 
 p{
- line-height: 2.5;
+ // line-height: 2.5;
  text-decoration: underline;
 }
 
@@ -114,7 +114,8 @@ h1 {
 }
 
 .big-logo {
- font-size: 7vw;
+ font-size: 6vw;
+ justify-content: center;
 }
 
 .sub {
@@ -160,7 +161,7 @@ span{
 }
 
 .about {
- padding: 30px;
+ // padding: 30px;
  font-size: 2.5vmin;
 }
 
