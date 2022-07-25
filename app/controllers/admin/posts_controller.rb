@@ -48,7 +48,7 @@ class Admin::PostsController < ApplicationController
   def search
     @posts = Post.search(params[:genre_id])
     @genre = Genre.find(params[:genre_id])
-    #@posts = @posts.page(params[:page]).per(5)
+    @posts = @posts.page(params[:page]).per(4)
   end
 
   private

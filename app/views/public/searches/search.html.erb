@@ -5,6 +5,9 @@
       <% if @range == 'ユーザー' %>
         <%= render 'public/members/member', members: @members %>
         <%= paginate @members %>
+        <% if @members.count == 0 %>
+          検索結果が見つかりませんでした。
+        <% end %>
       <% elsif @range == '投稿' %>
         <div class='row'>
           <div class='col-10'>
@@ -14,8 +17,9 @@
             <%= paginate @posts %>
           </div>
         </div>
-      <% else %>
-        検索結果が見つかりませんでした。
+        <% if @posts.count == 0 %>
+          検索結果が見つかりませんでした。
+        <% end %>
       <% end %>
     </div>
   </div>

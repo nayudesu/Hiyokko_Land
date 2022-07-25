@@ -4,8 +4,11 @@
       <div class='title'>#<%= @genre.name %>の検索結果</div>
       <div class='row'>
         <div class='col-10'>
-          <div class='posts'>
+          <div class='posts d-flex justify-content-center'>
             <%= render 'public/posts/post', posts: @posts %>
+            <% if @posts.count == 0 %>
+              検索結果が見つかりませんでした
+            <% end %>
           </div>
         </div>
         <%= paginate @posts %>
