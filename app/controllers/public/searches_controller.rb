@@ -4,7 +4,7 @@ class Public::SearchesController < ApplicationController
     @range = params[:range]
     @keyword = params[:keyword]
 
-    if @range == 'ユーザ'
+    if @range == 'ユーザー'
       @members = Member.looks(@keyword).page(params[:page]).per(10)
     else
       @posts = Post.looks(@keyword).page(params[:page]).per(4)

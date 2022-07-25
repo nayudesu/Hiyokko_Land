@@ -2,14 +2,14 @@
   <div class="new">
     <div class='container post-back px-5 pb-5'>
 　　　<h3 class='title mb-3'>＃<%= @keyword %>の検索結果</h3>
-      <% if @range == 'ユーザ' %>
+      <% if @range == 'ユーザー' %>
         <%= render 'public/members/member', members: @members %>
         <%= paginate @members %>
       <% elsif @range == '投稿' %>
         <div class='row'>
           <div class='col-10'>
             <div class='posts'>
-              <%= render 'admin/posts/post', posts: @posts %>
+              <%= render 'public/posts/post', posts: @posts %>
             </div>
             <%= paginate @posts %>
           </div>

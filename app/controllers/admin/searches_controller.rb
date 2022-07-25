@@ -4,12 +4,10 @@ class Admin::SearchesController < ApplicationController
     @range = params[:range]
     @keyword = params[:keyword]
 
-    if @range == 'ユーザ'
-      @members = Member.looks(@keyword)
-      @members = Member.page(params[:page]).per(10)
+    if @range == 'ユーザー'
+      @members = Member.looks(@keyword).page(params[:page]).per(10)
     else
-      @posts = Post.looks(@keyword)
-      @posts = @posts.page(params[:page]).per(4)
+      @posts = Post.looks(@keyword).page(params[:page]).per(4)
     end
   end
 

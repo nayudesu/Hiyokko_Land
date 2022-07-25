@@ -88,6 +88,10 @@ img {
  margin: 1rem auto;
 }
 
+.members img {
+ width: auto;
+}
+
 h1 {
  font-size: 3rem;
 }
@@ -302,6 +306,14 @@ span{
 
 .hart {
  color: #e54747;
+}
+
+.com {
+ margin: 2px;
+}
+
+.com a {
+ color: red;
 }
 
 @media screen and (max-width: 992px) {

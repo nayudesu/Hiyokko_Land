@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   scope module: :admin do
     get 'admin_genre_search' => 'posts#search'
+    get 'admin_search' => 'searches#search'
   end
 
   devise_for :members,controllers: {

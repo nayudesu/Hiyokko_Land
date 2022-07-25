@@ -7,10 +7,6 @@ class Admin::MembersController < ApplicationController
     @posts = @member.posts
   end
 
-  def index
-    @members = Member.all
-  end
-
   def edit
     @member = Member.find(params[:id])
   end

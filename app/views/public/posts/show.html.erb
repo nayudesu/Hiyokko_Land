@@ -3,24 +3,13 @@
     <div class='container post-back'>
       <div class="mypage p-3">
       <%= flash[:notice] %>
-      <div class='row d-flex p-3 align-items-top'>
-        <div class="col-md-4 col-sm-12">
           <div class="row mx-3">
-            <div class='favorite col-6 d-flex align-items-end'>
+            <div class='favorite d-flex align-items-end'>
               <%= render 'favorite', post: @post %>
             </div>
-            <div class="col-6">
-              <% if @member.profile_image.attached? %>
-                <%= image_tag @member.profile_image, size: "40x40" %>
-              <% else %>
-                <%= image_tag 'no-image-icon', size: "40x40" %>
-              <% end %>
-              <div>
-                <%= @post.member.nickname %>さん
-              </div>
-            </div>
           </div>
-          <div class='row pb-3 px-3'>
+      <div class='row d-flex pb-3 px-3 align-items-top'>
+        <div class="col-md-4 col-sm-12">
            <%= link_to post_path(@post) do %>
             <% if @post.image.attached? %>
               <%= image_tag @post.image, size: "200x200" %>
@@ -28,13 +17,16 @@
               <%= image_tag 'no-image', size: "200x200" %>
             <% end %>
            <% end %>
-          </div>
         </div>
-
         <div class='col-md-8 col-sm-12'>
           <div class="row mt-3">
-            <div class="col-4 text-left"> ＃<%= @post.genre.name %></div>
-            <div class="col-8 text-right">投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></div>
+            <div class="col-md-3 col-sm-12 text-left"> ＃<%= @post.genre.name %></div>
+            <div class="col-md-9 col-sm-12 text-right">
+              投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %>
+              <%= link_to member_path(@post.member) do %>
+                 (<%= @post.member.nickname %>さん)
+              <% end %>
+            </div>
           </div>
           <h4 class='post-form mb-3'>
             <%= @post.title %>
@@ -46,7 +38,7 @@
       </div>
         <div class='text-center'>
           <% if @post.member == current_member %>
-            <%= link_to '編集する',  edit_post_path(@post), class: 'btn btn-green' %>
+            <%= link_to '編集する',  edit_post_path(@post), class: 'btn btn-green col-4' %>
           <% end %>
         </div>
       </div>
