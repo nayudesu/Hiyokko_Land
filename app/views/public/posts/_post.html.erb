@@ -14,7 +14,7 @@
       <% if post.image.attached? %>
         <%= image_tag post.get_image(300,300) %>
       <% else %>
-        <%= image_tag '', size: "300x300" %>
+        <%= image_tag 'no-image.jpg', size: "300x300" %>
       <% end %>
     <% end %>
   </h4>
@@ -25,8 +25,5 @@
       <%= post.member.nickname %>さん
     <% end %>
 　</h6>
-
-  <!--本文-->
-    <%#= post.body %>
 </div>
 <% end %>

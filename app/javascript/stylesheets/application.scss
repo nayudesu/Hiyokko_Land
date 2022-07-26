@@ -71,8 +71,12 @@ a{
 
 
 p{
- // line-height: 2.5;
  text-decoration: underline;
+}
+
+.post-form p {
+  text-decoration: none;
+  text-align: start;
 }
 
 .table {

@@ -32,7 +32,8 @@
             <%= @post.title %>
           </h4>
           <div class='post-form'>
-            <%= @post.body %>
+            <!--simple_format＝railsヘルパーの文字列加工-->
+            <%= simple_format(@post.body) %>
           </div>
         </div>
       </div>
