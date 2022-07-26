@@ -27,7 +27,8 @@
             <%= @post.title %>
           </h4>
           <div class='post-form'>
-            (<%= @post.member.nickname %>さん)
+            <!--simple_format＝railsヘルパーの文字列加工-->
+            <%= simple_format(@post.body) %>
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@
             </span>
             <span class='text-danger'>
               <%= link_to '削除', admin_post_post_comment_path(post_comment.post, post_comment), method: :delete, data: {confirm: "このコメントを削除しますか？"}, remote: true %>
-    　　　　    </span>
+            </span>
           </div>
           <% end %>
         </div>

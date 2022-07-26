@@ -23,9 +23,6 @@
                 <% end %>
             </td>
             <td>
-              (<%= member.introduction %>)
-            </td>
-            <td>
                 <% if member.is_deleted == false %>
                   <span style="font-weight: bold; color: orange;">有効</span>
                 <% else %>
@@ -36,7 +33,7 @@
         </table>
       </div>
       <% end %>
-      <%= paginate @members %>
     </div>
+    <%= paginate @members %>
   </div>
 </div>
