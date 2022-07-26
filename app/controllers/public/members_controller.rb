@@ -1,7 +1,11 @@
 class Public::MembersController < ApplicationController
 
-  before_action :authenticate_member!
+  before_action :authenticate_member!, except: [:index]
   before_action :ensure_guest_member, only: [:edit]
+
+  def index
+    redirect_to  new_member_registration_path
+  end
 
   def show
     @member = Member.find(params[:id])

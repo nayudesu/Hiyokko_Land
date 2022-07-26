@@ -42,7 +42,7 @@ Rails.application.routes.draw do
       resources :post_comments, except: [:index, :show, :new, :edit, :update]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :members, only: [:show, :edit, :update] do
+    resources :members, only: [:show, :edit, :update, :index] do
       member do
         get 'favorites' => 'favorites#favorite'
       end
