@@ -12,7 +12,7 @@
       <li class='btn btn-orange'><%= link_to favorites_member_path(current_member) do %><i class="fas fa-heart"></i>いいねリスト<% end %></li>
       <li class='btn btn-orange'><%= link_to destroy_member_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
     </ul>
-    <div class='text-md-right text-sm-center'>
+    <div class='text-md-right mr-md-5 text-sm-center'>
       <%= form_with url: search_path, method: :get do |f| %>
         <%= f.text_field :keyword %>
         <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
@@ -25,7 +25,7 @@
       <li class='btn btn-orange'><%= link_to admin_posts_path do %><i class="fas fa-bars"></i>投稿一覧<% end %></li>
       <li class='btn btn-orange'><%= link_to admin_genres_path do %><i class="fas fa-bookmark"></i>ジャンル一覧<% end %></li>
       <li class='btn btn-orange'><%= link_to destroy_admin_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
-      <div>
+      <div class='text-md-right mr-md-5 text-sm-center'>
         <%= form_with url: admin_search_path, method: :get do |f| %>
           <%= f.text_field :keyword %>
           <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
