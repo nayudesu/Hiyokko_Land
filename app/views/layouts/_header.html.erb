@@ -2,7 +2,7 @@
     <div class="logo-mark">
      <%= link_to root_path do %>｜ひよっこランド｜<% end %>
     </div>
-  <nav>
+  <nav class='d-flex flex-column'>
     <% if member_signed_in? %>
     <ul>
       <li>ようこそ<%= current_member.nickname %>さん</li>
@@ -11,13 +11,14 @@
       <li class='btn btn-orange'><%= link_to member_path(current_member) do %><i class="fas fa-user"></i>マイページ<% end %></li>
       <li class='btn btn-orange'><%= link_to favorites_member_path(current_member) do %><i class="fas fa-heart"></i>いいねリスト<% end %></li>
       <li class='btn btn-orange'><%= link_to destroy_member_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
+    </ul>
+    <div class='text-md-right text-sm-center'>
       <%= form_with url: search_path, method: :get do |f| %>
         <%= f.text_field :keyword %>
         <%= f.select :range, options_for_select([['ユーザー'],['投稿']]) %>
         <%= f.submit '検索' %>
       <% end %>
-
-    </ul>
+    </div>
       <% elsif admin_signed_in? %>
     <ul>
       <li class='btn btn-orange'><%= link_to admin_root_path do %><i class="fas fa-address-book"></i>ユーザ一覧<% end %></li>
