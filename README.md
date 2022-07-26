@@ -17,10 +17,6 @@
 ## 設計書
 画面設計書：https://drive.google.com/file/d/15XHHGi-YhMx9tizmUrb51K93x6isygGQ/view?usp=sharing
 
-ワイヤーフレーム：（ユーザー側）https://docs.google.com/presentation/d/1fqzz32T12Vo0xJKbSAtLqRc7t2BnE61QsL5vJ6yrdds/edit?usp=sharing
-
-ワイヤーフレーム：（管理者側）https://docs.google.com/presentation/d/1h6Bq07G2XlEdKhpwmwkcN-mjxSO-8bsEPGF_lhvQ1gc/edit?usp=sharing
-
 ER図：https://drive.google.com/file/d/1qtAcW-3tgkKA8RKfKUT3feEic8n_IPAE/view?usp=sharing
 
 テーブル定義書：https://docs.google.com/spreadsheets/d/13fl1On8l6rfng4OqZgcq7r_Z-r4kNdQ_/edit?usp=sharing&ouid=117424918320852955496&rtpof=true&sd=true
