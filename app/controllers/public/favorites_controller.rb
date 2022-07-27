@@ -18,8 +18,7 @@ class Public::FavoritesController < ApplicationController
   def favorite
     @member = Member.find(params[:id])
     favorites = Favorite.where(member_id: @member.id).pluck(:post_id)
-    @posts = Post.where(id: favorites)
-    #@post = Post.find(params[:post_id])
+    @posts = Post.where(id: favorites).page(params[:page]).per(4)
   end
 
 end

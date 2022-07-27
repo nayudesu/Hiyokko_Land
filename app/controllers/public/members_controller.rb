@@ -9,7 +9,7 @@ class Public::MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
-    @posts = @member.posts
+    @posts = @member.posts.page(params[:page]).per(4)
   end
 
   def edit
